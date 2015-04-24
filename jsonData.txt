@@ -1,0 +1,30 @@
+{
+    "type": "bidder",
+    "provider": "datacratic",
+    "version": "Release1",
+    "key": "",
+    "entities": {
+        "campaign": {
+            "fields": {
+                "field1": {
+                    "type": "string12",
+                    "value": "${CAMPAIGN.NAME}"
+                },
+                "field2": {
+                    "type": "integer",
+                    "value": "${CAMPAIGN.INT_ID}"
+                }
+            }  
+        },
+        "configurations": {
+          "reference" : "campaign",
+          "fields":
+          {
+            "active": {
+              "type": "boolean",
+              "value": 1
+            }
+          }
+         }
+  }
+}
