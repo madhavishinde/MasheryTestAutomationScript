@@ -11,7 +11,7 @@ import requests
 #To calculate time required to run program
 import time
 #to include credentials of oauth2.0
-import Credentials
+import ConfigFile
 
 class Api:
 	
@@ -27,37 +27,37 @@ class Api:
 
 	def fetch_token_operation(self):
 
-		###############################
+		###############################################################
 		#NAME OF MODULE : fetch_token_operation
 		#DESCRIPTION : This module does OAuth authentication 
 		#and gives access token required to process REST APIs of Rubicon
 		#INPUT/OUTPUT : Input is nothing and Output is Access token
-		###############################
+		###############################################################
 
 		print '\n-----------------Authentication step-----------------\n'
 		#To disable verification of HTTPS requests
 		requests.packages.urllib3.disable_warnings()
-		mashery = OAuth2Session(Credentials.client_id, redirect_uri=Credentials.redirect_uri)
-		authorization_url, state = mashery.authorization_url(Credentials.authorization_base_url)
+		mashery = OAuth2Session(ConfigFile.client_id, redirect_uri=ConfigFile.redirect_uri)
+		authorization_url, state = mashery.authorization_url(ConfigFile.authorization_base_url)
 		#Conversion between http and https is required because OAuth2.0 support only
 		#SSL connections (https) and Application uses http connection 
 		authorization_url = authorization_url.replace("https", "http", 1)
 		print '\nPlease open this URL in browser and authorize,', authorization_url
 		redirect_response = raw_input('\nCopy the full redirect URL here:')
 		redirect_response = redirect_response.replace("http", "https", 1)
-		tokenStr = str(mashery.fetch_token(Credentials.token_url, client_secret=Credentials.client_secret,authorization_response=redirect_response, verify=False))
+		tokenStr = str(mashery.fetch_token(ConfigFile.token_url, client_secret=ConfigFile.client_secret,authorization_response=redirect_response, verify=False))
 		#print "\n\nAccess token information :" + tokenStr + "\n\n"
 		tokenStr = ast.literal_eval(tokenStr)
  		return tokenStr.get('access_token')
 
 	def list_operation(self):
 
-		###############################
+		###############################################################		
                 #NAME OF MODULE : list_operation
                 #DESCRIPTION : This module gives list of entities
 		#specific to particular API
                 #INPUT/OUTPUT : Input is nothing and Output is List of entities
-                ###############################
+                ###############################################################
 	
 		print '\n-----------------List endpoint-----------------\n'
 		requests.packages.urllib3.disable_warnings()
@@ -74,12 +74,12 @@ class Api:
 
 	def show_operation(self):
 
-		###############################
+		###############################################################
                 #NAME OF MODULE : show_operation
                 #DESCRIPTION : This module gives Details of entity
                 #specific to particular API
                 #INPUT/OUTPUT : Input is nothing and Output is Details of specific entity of specific API
-                ###############################
+                ###############################################################
 
 		print '\n-----------------Show endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
@@ -101,11 +101,13 @@ class Api:
 
 	def upload_file_operation(self, json_file_name, image_file_name):
 
-		###############################
+		###############################################################
                 #NAME OF MODULE : upload_file_operation
-                #DESCRIPTION : This module uploads json file and image file to database
-                #INPUT/OUTPUT : Input is json file and image file and Output is upload id of uploaded file
-                ###############################
+                #DESCRIPTION : This module uploads json file and image file to 
+		#database
+                #INPUT/OUTPUT : Input is json file and image file and Output is
+		# upload id of uploaded file
+                ###############################################################
 
         	print '\n-----------------Upload File endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
@@ -130,11 +132,12 @@ class Api:
 
 	def create_operation(self):
 
-		###############################
+		###############################################################
                 #NAME OF MODULE : create_operation
                 #DESCRIPTION : This module creates entity for specific API
-                #INPUT/OUTPUT : Input is nothing and Output is id of created entity
-                ###############################
+                #INPUT/OUTPUT : Input is nothing and Output is id of created 
+		#entity
+                ###############################################################
 
         	print '\n-----------------Create endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
@@ -160,11 +163,12 @@ class Api:
 
 	def update_operation(self):
 
-		###############################
+		###############################################################
                 #NAME OF MODULE : update_operation
                 #DESCRIPTION : This module updates entity for specific API
-                #INPUT/OUTPUT : Input is nothing and Output is 200 response of updated sucessfully
-                ###############################
+                #INPUT/OUTPUT : Input is nothing and Output is 200 response of 
+		#updated sucessfully
+                ###############################################################
 
         	print '\n-----------------Update endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
@@ -185,11 +189,12 @@ class Api:
 
 	def destroy_operation(self):
 
-		###############################
+		###############################################################
                 #NAME OF MODULE : destroy_operation
                 #DESCRIPTION : This module deletes entity for specific API
-                #INPUT/OUTPUT : Input is nothing and Output is 200 response of deleted sucessfully
-                ###############################
+                #INPUT/OUTPUT : Input is nothing and Output is 200 response of
+		# deleted sucessfully
+                ##############################################################
 	
         	print '\n-----------------Destroy endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
@@ -216,11 +221,12 @@ class Organization(Api):
 
         def get_budget_operation(self):
 
-		###############################
+		###############################################################
                 #NAME OF MODULE : get_budget_operation
-                #DESCRIPTION : This module gives budget details for organization API
+                #DESCRIPTION : This module gives budget details for organization
+		#API
                 #INPUT/OUTPUT : Input is nothing and Output is details of budget
-                ###############################
+                ################################################################
 
                 print '\n-----------------Get Budget endpoint-----------------\n'
                 requests.packages.urllib3.disable_warnings()
@@ -237,11 +243,12 @@ class Organization(Api):
 
         def add_budget_operation(self):
 
-		###############################
+		###############################################################
                 #NAME OF MODULE : add_budget_operation
                 #DESCRIPTION : This module adds budget for organization API
-                #INPUT/OUTPUT : Input is nothing and Output is 200 response of budget added sucessfully
-                ###############################
+                #INPUT/OUTPUT : Input is nothing and Output is 200 response of 
+		#budget added sucessfully
+                ###############################################################
 
                 print '\n-----------------Add Budget endpoint-----------------\n'
                 requests.packages.urllib3.disable_warnings()
@@ -264,7 +271,6 @@ class Organization(Api):
 if __name__ == '__main__':
 
 	start_time = time.time()
-	print "--- Program started at %s second---" % (start_time)
 	org_api = Organization()
 	Api.url_path = "api/v1/organizations"	
 	json_file_name = "/home/ubuntu/Mashery/jsonData.txt"
@@ -285,5 +291,4 @@ if __name__ == '__main__':
 	payload = {"budget" : budget_value}
 	org_api.add_budget_operation()
 	finish_time = time.time()
-	print "--- Program finished at %s second ---" % (finish_time)
-	print "--- Program takes %s seconds to execute ---" % (finish_time - start_time)
+	print "--- Completion time : %s seconds--" % (finish_time - start_time)
