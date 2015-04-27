@@ -8,21 +8,14 @@ import json
 import sys
 #To disable warnings
 import requests
+#To calculate time required to run program
+import time
+#to include credentials of oauth2.0
+import Credentials
 
 class Api:
 	
 	#'Common base class for all apis'
-	token = u""
-	#Application's clientID required for OAuth2.0 authentication
-	client_id='zfupgaj4k7ashk2wx635zptm'
-	#Application's clientSecret required for OAuth2.0 authentication
-	client_secret='MAQb9HGK67Y2DevGVMNssTTx'
-	#Application's Authorization URL required for OAuth2.0 authentication
-	authorization_base_url = 'https://dspbuilder.rubiconproject.com/login'
-	#Application's token URL required for OAuth2.0 authentication
-	token_url = 'https://api.dspbuilder.rubiconproject.com/accesstoken'
-	#Application's Redirect URL required for OAuth2.0 authentication
-	redirect_uri = 'http://rubiconproject.mashery.com/io-docs/oauth2callback'
 	#Id of specific API
 	general_id = ""	
 	#URL of specific API
@@ -44,15 +37,15 @@ class Api:
 		print '\n-----------------Authentication step-----------------\n'
 		#To disable verification of HTTPS requests
 		requests.packages.urllib3.disable_warnings()
-		mashery = OAuth2Session(Api.client_id, redirect_uri=Api.redirect_uri)
-		authorization_url, state = mashery.authorization_url(Api.authorization_base_url)
+		mashery = OAuth2Session(Credentials.client_id, redirect_uri=Credentials.redirect_uri)
+		authorization_url, state = mashery.authorization_url(Credentials.authorization_base_url)
 		#Conversion between http and https is required because OAuth2.0 support only
 		#SSL connections (https) and Application uses http connection 
 		authorization_url = authorization_url.replace("https", "http", 1)
 		print '\nPlease open this URL in browser and authorize,', authorization_url
 		redirect_response = raw_input('\nCopy the full redirect URL here:')
 		redirect_response = redirect_response.replace("http", "https", 1)
-		tokenStr = str(mashery.fetch_token(Api.token_url, client_secret=Api.client_secret,authorization_response=redirect_response, verify=False))
+		tokenStr = str(mashery.fetch_token(Credentials.token_url, client_secret=Credentials.client_secret,authorization_response=redirect_response, verify=False))
 		#print "\n\nAccess token information :" + tokenStr + "\n\n"
 		tokenStr = ast.literal_eval(tokenStr)
  		return tokenStr.get('access_token')
@@ -270,6 +263,8 @@ class Organization(Api):
 
 if __name__ == '__main__':
 
+	start_time = time.time()
+	print "--- Program started at %s second---" % (start_time)
 	org_api = Organization()
 	Api.url_path = "api/v1/organizations"	
 	json_file_name = "/home/ubuntu/Mashery/jsonData.txt"
@@ -289,3 +284,6 @@ if __name__ == '__main__':
 	org_api.get_budget_operation()
 	payload = {"budget" : budget_value}
 	org_api.add_budget_operation()
+	finish_time = time.time()
+	print "--- Program finished at %s second ---" % (finish_time)
+	print "--- Program takes %s seconds to execute ---" % (finish_time - start_time)
