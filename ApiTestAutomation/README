@@ -1,0 +1,14 @@
+Pre-requisites : 
+
+1. python2.7+,  
+2. requests_oauthlib library, 
+3. requests library
+
+
+How to run : 
+
+1. python ApiExecutionProductionInstance.py
+2. Then it will display 1 URL, which you have to paste on brower and have to provide credentials required, also select grant type.
+3. After sucessful oauthorization, paste the redirected URL to script as input.
+4. It will start testing of Organization api's endpoints and will display result. 
+
