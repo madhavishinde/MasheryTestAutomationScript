@@ -1,14 +1,18 @@
 Pre-requisites : 
 
+Following packages needs to be installed:
 1. python2.7+,  
 2. requests_oauthlib library, 
 3. requests library
 
+#apt-get install python
+#pip install requests_oauthlib requests
+
 
 How to run : 
 
-1. python ApiExecutionProductionInstance.py
-2. Then it will display 1 URL, which you have to paste on brower and have to provide credentials required, also select grant type.
-3. After sucessful oauthorization, paste the redirected URL to script as input.
-4. It will start testing of Organization api's endpoints and will display result. 
-
+1. Execute the script with the following command: 
+	#python ApiExecutionProductionInstance.py
+2. You will get an authorization url. Open this url in browser and provide the login credentials. Also provide the "Grant Type". 
+3. After successful authorization, you will get a redirect url in the browser. Copy this url and provide it as an input to this script.
+4. The automation script starts executing the organization endpoints. 
