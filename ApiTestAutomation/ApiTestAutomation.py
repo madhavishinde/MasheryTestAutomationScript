@@ -12,6 +12,8 @@ import requests
 import time
 #to include credentials of oauth2.0
 import ConfigFile
+#To use login automation function
+import seleniumLoginAutomation
 
 #Common base class for all apis
 
@@ -49,11 +51,15 @@ class Api:
 		#Conversion between http and https is required because OAuth2.0 supports only
 		#SSL connection (https) and Application uses http connection 
 		authorization_url = authorization_url.replace("https", "http", 1)
-		print '\nPlease open this URL in browser and authorize : ', authorization_url
-		redirect_response = raw_input('\nRedirect URL : ')
+		print "Fetching access token...."
+		#This function does login, selects grant type and returns redirected url containing access code
+		redirect_response = seleniumLoginAutomation.login_automation(authorization_url)
+		#print '\nPlease open this URL in browser and authorize : ', authorization_url
+		#redirect_response = raw_input('\nRedirect URL : ')
 		redirect_response = redirect_response.replace("http", "https", 1)
 		tokenStr = str(mashery.fetch_token(ConfigFile.token_url, client_secret=ConfigFile.client_secret,authorization_response=redirect_response, verify=False))
 		tokenStr = ast.literal_eval(tokenStr)
+		print "\nAccess token : " + tokenStr.get('access_token')
  		return tokenStr.get('access_token')
 
 	#################################################################
