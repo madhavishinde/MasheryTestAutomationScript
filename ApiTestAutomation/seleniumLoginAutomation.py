@@ -39,7 +39,7 @@ class SeleniumMasheryTest(unittest.TestCase):
         driver.find_element_by_id("user_password").clear()
         driver.find_element_by_id("user_password").send_keys("Mike2015!")
         driver.find_element_by_name("commit").click()
-        Select(driver.find_element_by_id("organization")).select_by_visible_text("Test organization")
+        Select(driver.find_element_by_id("organization")).select_by_visible_text("Mealtime media")
         driver.find_element_by_name("commit").click()
         #driver.get(link)
         #print("Redirected url : " + driver.current_url)
