@@ -1,15 +1,15 @@
 #Application's clientID required for OAuth2.0 authentication
-client_id = 'zfupgaj4k7ashk2wx635zptm'
+client_id = 'kqraw62bm8efuh4dt5k2bc26'
 #Application's clientSecret required for OAuth2.0 authentication
-client_secret = 'MAQb9HGK67Y2DevGVMNssTTx'
+client_secret = 'Mgd3gCgSqBdm2uerUyX5Zr4y'
 #Application's Authorization URL required for OAuth2.0 authentication
-authorization_base_url = 'https://dspbuilder.rubiconproject.com/login'
+authorization_base_url = 'https://staging.dspbuilder.rubiconproject.com/login'
 #Application's token URL required for OAuth2.0 authentication
-token_url = 'https://api.dspbuilder.rubiconproject.com/accesstoken'
+token_url = 'https://api-staging.dspbuilder.rubiconproject.com/accesstoken'
 #Application's Redirect URL required for OAuth2.0 authentication
 redirect_uri = 'http://rubiconproject.mashery.com/io-docs/oauth2callback'
 #Base url of all APIs
-base_url = 'https://api.dspbuilder.rubiconproject.com'
+base_url = 'https://api-staging.dspbuilder.rubiconproject.com'
 
 #username of authorize user
 user_email = "mchowla@rubiconproject.com"

@@ -11,6 +11,8 @@ import requests
 #To calculate time required to run program
 import time
 #to include credentials of oauth2.0
+#import ConfigFileProduction
+#import ConfigFileStaging
 import ConfigFile
 #To use login automation function
 import seleniumLoginAutomation
@@ -20,7 +22,27 @@ import seleniumLoginAutomation
 class Api:
 	
 	#Id of specific API
-	general_id = ""	
+	#general_id = ""	
+	#Id of campaign API
+	campaign_id = ""
+ 	#Id of ad API
+        ad_id = ""
+	#Id of audience API
+	audience_id  = ""
+	#Id of organization API
+        org_id  = ""
+	#Id of adsize API
+	adsize_id = ""
+	#Id of adtype API
+	adtype_id = ""
+	#Id of target API
+	target_id = ""
+	#Id of augmentor API
+	aug_id = ""
+	#Id of bidder API
+	bidder_id = ""
+	#Id of user API
+	user_id = ""
 	#URL of specific API
 	url_path = ""
 	#Upload_id of image uploaded
@@ -28,7 +50,9 @@ class Api:
 	#Data to be send with post request
 	payload = {}
 	#Base url of APIs
-	base_url = "https://api.dspbuilder.rubiconproject.com"
+	#base_url = "https://api.dspbuilder.rubiconproject.com"
+	#base_url = "https://api-staging.dspbuilder.rubiconproject.com"
+	base_url = '' #ConfigFile.base_url
 	#Access token
 	token = u''
 	###############################################################
@@ -45,7 +69,7 @@ class Api:
 
 		print '\n-----------------Authentication-----------------\n'
 		#To disable verification of HTTPS requests
-		requests.packages.urllib3.disable_warnings()
+		#requests.packages.urllib3.disable_warnings()
 		mashery = OAuth2Session(ConfigFile.client_id, redirect_uri=ConfigFile.redirect_uri)
 		authorization_url, state = mashery.authorization_url(ConfigFile.authorization_base_url)
 		#Conversion between http and https is required because OAuth2.0 supports only
@@ -54,13 +78,16 @@ class Api:
 		print "Fetching access token...."
 		#This function does login, selects grant type and returns redirected url containing access code
 		redirect_response = seleniumLoginAutomation.login_automation(authorization_url)
-		#print '\nPlease open this URL in browser and authorize : ', authorization_url
+		print '\nConfigFile.client_id' + ConfigFile.client_id + '\nConfigFile.client_secret : ' + ConfigFile.client_secret  
 		#redirect_response = raw_input('\nRedirect URL : ')
 		redirect_response = redirect_response.replace("http", "https", 1)
 		tokenStr = str(mashery.fetch_token(ConfigFile.token_url, client_secret=ConfigFile.client_secret,authorization_response=redirect_response, verify=False))
 		tokenStr = ast.literal_eval(tokenStr)
-		print "\nAccess token : " + tokenStr.get('access_token')
- 		return tokenStr.get('access_token')
+		Api.token = tokenStr.get('access_token')
+		if not Api.token:
+			print "Error while fetching access token."
+			exit(0)
+		print "\nAccess token : " + Api.token	
 
 	#################################################################
         #NAME OF MODULE : list_operation
@@ -95,17 +122,17 @@ class Api:
         #OUTPUT         : NA
         ##################################################################
 
-	def show_operation(self):
+	def show_operation(self, general_id):
 
 		print '\n-----------------Show endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
         	headers = {'Accept': 'application/json', 'Content-type': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
 		try:
-			if not Api.general_id:
+			if not general_id:
 	                        print "No id found.\nPlease first execute Create endpoint Api to generate the id.\n"
 				#exit(0)
 			else:
-				response = requests.get('%s/%s/%s' %(Api.base_url, Api.url_path, Api.general_id), verify=False, headers=headers)
+				response = requests.get('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers)
 				status_code = response.status_code
 				print "\nResponse Status_code : %s" %status_code
 				print response.text
@@ -128,7 +155,7 @@ class Api:
 	def upload_file_operation(self, json_file_name):
 
         	print '\n-----------------Upload File endpoint-----------------\n'
-	        requests.packages.urllib3.disable_warnings()
+	        #requests.packages.urllib3.disable_warnings()
         	headers = {'Accept': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
 		files = {'file': open(json_file_name, 'rb')}
         	try:
@@ -187,17 +214,17 @@ class Api:
         #OUTPUT         : NA
         ###############################################################
 
-	def update_operation(self):
+	def update_operation(self, general_id):
 
         	print '\n-----------------Update endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
         	headers = {'Accept': 'application/json', 'Content-type': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
         	try:
-			if not Api.general_id:
+			if not general_id:
                                 print "No id found.\nPlease first execute Create endpoint function to generate its id.\n"
                                 #exit(0)
 			else:
-		                response = requests.put('%s/%s/%s' %(Api.base_url, Api.url_path, Api.general_id), verify=False, headers=headers, data=json.dumps(Api.payload))
+		                response = requests.put('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers, data=json.dumps(Api.payload))
         		        status_code = response.status_code
                 		print "\nResponse Status_code : %s" %status_code
 	                	print response.text
@@ -214,20 +241,20 @@ class Api:
         #OUTPUT         : NA
         ##############################################################
 
-	def destroy_operation(self):
+	def destroy_operation(self, general_id):
 
         	print '\n-----------------Destroy endpoint-----------------\n'
 	        requests.packages.urllib3.disable_warnings()
         	headers = {'Accept': 'application/json', 'Content-type': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
 	        try:
-			if not Api.general_id:
+			if not general_id:
                                 print "No id found to destroy.\nPlease first execute Create endpoint function to generate id.\n"
                                 #exit(0)
         		else:
-			        response = requests.delete('%s/%s/%s' %(Api.base_url, Api.url_path, Api.general_id), verify=False, headers=headers)
+			        response = requests.delete('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers)
         	        	status_code = response.status_code
 	        	        print "\nResponse Status_code : %s" %status_code
-        	        	print response.text
+        	        	#print response.text
 				if response.status_code == 204 :
 					print "Deleted successfully"
 	                	response.raise_for_status()
@@ -235,28 +262,21 @@ class Api:
                 	print 'HTTP ERROR.'
 	                print e
 
-
-"""
-#This is an organization api class which extends Api class.
-
-class Organization(Api):
-
-	###############################################################
-        #NAME OF MODULE : get_budget_operation
-        #DESCRIPTION    : This module gives budget details for organization
-        #	          API
+        ###############################################################
+        #NAME OF MODULE : new_operation
+        #DESCRIPTION    : This module details for specific API
         #INPUT          : self object used to give a reference to the
         #                 current object.
         #OUTPUT         : NA
-        ################################################################
-"""
-"""        def get_budget_operation(self):
+        ##############################################################
 
-                print '\n-----------------Get Budget endpoint-----------------\n'
+        def new_operation(self):
+
+                print '\n-----------------New endpoint-----------------\n'
                 requests.packages.urllib3.disable_warnings()
                 headers = {'Accept': 'application/json', 'Content-type': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
                 try:
-                        response = requests.get('https://api.dspbuilder.rubiconproject.com/api/v1/organizations/budget', verify=False, headers=headers)
+                     	response = requests.get('%s/%s/new' %(Api.base_url, Api.url_path), verify=False, headers=headers)
                         status_code = response.status_code
                         print "\nResponse Status_code : %s" %status_code
                         print response.text
@@ -265,26 +285,52 @@ class Organization(Api):
                         print 'HTTP ERROR.'
                         print e
 
-	###############################################################
-        #NAME OF MODULE : add_budget_operation
-        #DESCRIPTION    : This module adds budget for organization API
+        ###############################################################
+        #NAME OF MODULE : pause_operation
+        #DESCRIPTION    : This module pauses entity for specific API
         #INPUT          : self object used to give a reference to the
-        #                 current object.
+        #                 current object
         #OUTPUT         : NA
         ###############################################################
-"""
-"""
-        def add_budget_operation(self):
 
-                print '\n-----------------Add Budget endpoint-----------------\n'
+        def pause_operation(self, general_id):
+
+                print '\n-----------------Pause endpoint-----------------\n'
                 requests.packages.urllib3.disable_warnings()
                 headers = {'Accept': 'application/json', 'Content-type': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
                 try:
-			if not Api.payload:
-                                print "No payload data available to pass to post function\n"
+                        if not general_id:
+				print "No id found.\nPlease first execute Create endpoint function to generate id.\n"
                                 #exit(0)
-			else:
-	                        response = requests.post('https://api.dspbuilder.rubiconproject.com/api/v1/organizations/budget', verify=False, headers=headers, data=json.dumps(Api.payload))
+                        else:
+                        	response = requests.post('%s/%s/%s/pause' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers, data=json.dumps(Api.payload))
+                        	status_code = response.status_code
+                        	print "\nResponse Status_code : %s" %status_code
+                        	print response.text
+                        	response.raise_for_status()
+                except requests.HTTPError, e:
+                        print 'HTTP ERROR.'
+                        print e
+
+        ###############################################################
+        #NAME OF MODULE : resume_operation
+        #DESCRIPTION    : This module resumes entity for specific API
+        #INPUT          : self object used to give a reference to the
+        #                 current object
+        #OUTPUT         : NA
+        ###############################################################
+
+        def resume_operation(self, general_id):
+
+                print '\n-----------------Resume endpoint-----------------\n'
+                requests.packages.urllib3.disable_warnings()
+                headers = {'Accept': 'application/json', 'Content-type': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
+                try:
+                        if not general_id:
+				print "No id found.\nPlease first execute Create endpoint function to generate id.\n"
+                                #exit(0)
+                        else:
+	                        response = requests.post('%s/%s/%s/resume' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers, data=json.dumps(Api.payload))
         	                status_code = response.status_code
                 	        print "\nResponse Status_code : %s" %status_code
                         	print response.text
@@ -292,45 +338,5 @@ class Organization(Api):
                 except requests.HTTPError, e:
                         print 'HTTP ERROR.'
                         print e
-"""
-"""
-if __name__ == '__main__':
 
-	#Start time of program
-	start_time = time.time()
-	
-	org_api = Organization()
-	Api.url_path = "api/v1/organizations"	
-	json_file_name = "InputJsonForUpload.txt"
-	
-	budget_value = 59
-	#This module does OAuth authentication and returns access token.
-	Api.token = org_api.fetch_token_operation()
-	#This module gives list of organizations available.
-	org_api.list_operation()
-	#This module uploads file i.e. json data and returns upload id.
-	Api.upload_id = org_api.upload_file_operation(json_file_name)
-	#This is the payload information which is required for creating organization.
-	Api.payload = {"organization": {"name": "New organization1", "url": "www.test1.com", "upload_id": "%s" %Api.upload_id }}	
-	#This module creates organization.
-	Api.general_id = org_api.create_operation()
-	#This is the payload information which is required for updating organization.
-	Api.payload = {"organization": {"name": "Rename organization1", "url": "www.test1.com", "upload_id": "%s" %Api.upload_id }}
-	#This module updates organization.
-	org_api.update_operation()
-	#This module gives details of specific organization
-	org_api.show_operation()
-	#This module deletes organization
-	org_api.destroy_operation()
-	#This module gives budget details
-	org_api.get_budget_operation()
-	#This is the payload information which is required for adding budget.
-	payload = {"budget" : budget_value}
-	#This module adds budget
-	org_api.add_budget_operation()
-	#Finish time of program
-	finish_time = time.time()
-	
-	print "\n--- Completion time : %s seconds--" % (finish_time - start_time)
 
-"""

@@ -16,15 +16,15 @@ def execute_augmentor_api():
      ##   #BaseClassApi.Api.payload = {"organization": {"name": "New organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"augmentor": {"name" : "audience name" , "upload_id":"%s" %BaseClassApi.Api.upload_id}}
         #This module creates organization.
-        BaseClassApi.Api.general_id = aug_api.create_operation()
+        BaseClassApi.Api.aug_id = aug_api.create_operation()
         #BaseClassApi.Api.general_id = ""
         #This is the payload information which is required for updating organization.
     ##  BaseClassApi.Api.payload = {"organization": {"name": "Rename organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"augmentor": {"name" : "audience name" , "upload_id":"%s" %BaseClassApi.Api.upload_id}}
         #This module updates organization.
-        aug_api.update_operation()
+        aug_api.update_operation(BaseClassApi.Api.aug_id)
         #This module gives details of specific organization
-        aug_api.show_operation()
+        aug_api.show_operation(BaseClassApi.Api.aug_id)
         #This module deletes organization
-        ########################aug_api.destroy_operation()
+        ########################aug_api.destroy_operation(BaseClassApi.Api.aug_id)
 

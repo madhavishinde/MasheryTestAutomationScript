@@ -16,15 +16,15 @@ def execute_adtype_api():
      ##   #BaseClassApi.Api.payload = {"organization": {"name": "New organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"adtype" : {"name" : "Simple", "status" : "active"}}
         #This module creates organization.
-        BaseClassApi.Api.general_id = adtype_api.create_operation()
+        BaseClassApi.Api.adtype_id = adtype_api.create_operation()
         #BaseClassApi.Api.general_id = ""
         #This is the payload information which is required for updating organization.
     ##  BaseClassApi.Api.payload = {"organization": {"name": "Rename organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"adtype" : {"name" : "Simpleupdate", "status" : "active"}}
         #This module updates organization.
-        adtype_api.update_operation()
+        adtype_api.update_operation(BaseClassApi.Api.adtype_id)
         #This module gives details of specific organization
-        adtype_api.show_operation()
+        adtype_api.show_operation(BaseClassApi.Api.adtype_id)
         #This module deletes organization
-        ########################aug_api.destroy_operation()
+        ########################aug_api.destroy_operation(BaseClassApi.Api.adtype_id)
 

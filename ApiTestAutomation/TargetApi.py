@@ -16,18 +16,18 @@ def execute_target_api():
      ##   #BaseClassApi.Api.payload = {"organization": {"name": "New organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"target": {"name" : "target name1", "price" : "20",  "segmentrules" : {"app.name": { "include": [ "^Casino" ]}}}}
         #This module creates organization.
-        BaseClassApi.Api.general_id = target_api.create_operation()
+        BaseClassApi.Api.target_id = target_api.create_operation()
         #BaseClassApi.Api.general_id = ""
         #This is the payload information which is required for updating organization.
     ##  BaseClassApi.Api.payload = {"organization": {"name": "Rename organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"target": {"name" : "target name1", "price" : "20",  "segmentrules" : {"app.name": { "include": [ "^Casino" ]}}}}
 	# This requires extra modifications
-        target_api.update_operation()
+        target_api.update_operation(BaseClassApi.Api.target_id)
         #This module gives details of specific organization
 
 	#This module updates organization.
 
-        target_api.show_operation()
+        target_api.show_operation(BaseClassApi.Api.target_id)
         #This module deletes organization
-        ########################aug_api.destroy_operation()
+        ########################aug_api.destroy_operation(BaseClassApi.Api.target_id)
 

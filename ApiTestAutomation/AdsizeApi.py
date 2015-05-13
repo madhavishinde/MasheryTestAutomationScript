@@ -16,15 +16,15 @@ def execute_adsize_api():
      ##   #BaseClassApi.Api.payload = {"organization": {"name": "New organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"adsize" : {"width" : 120, "height": 20 , "format" : "png", "status" : "active"}}
         #This module creates organization.
-        BaseClassApi.Api.general_id = adsize_api.create_operation()
+        BaseClassApi.Api.adsize_id = adsize_api.create_operation()
         #BaseClassApi.Api.general_id = ""
         #This is the payload information which is required for updating organization.
     ##  BaseClassApi.Api.payload = {"organization": {"name": "Rename organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
         BaseClassApi.Api.payload = {"adsize" : {"width" : 140, "height": 20 , "format" : "png", "status" : "active"}}
         #This module updates organization.
-        adsize_api.update_operation()
+        adsize_api.update_operation(BaseClassApi.Api.adsize_id)
         #This module gives details of specific organization
-        adsize_api.show_operation()
+        adsize_api.show_operation(BaseClassApi.Api.adsize_id)
         #This module deletes organization
-        ########################aug_api.destroy_operation()
+        ########################aug_api.destroy_operation(BaseClassApi.Api.adsize_id)
 
