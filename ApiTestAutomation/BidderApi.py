@@ -2,7 +2,8 @@
 import BaseClassApi
 
 class Bidder(BaseClassApi.Api):
-	print "This is bidder api class: \n"
+	pass
+	#print "This is bidder api class: \n"
 
 def execute_bidder_api():
 

@@ -2,7 +2,8 @@
 import BaseClassApi
 
 class Augmentor(BaseClassApi.Api):
-        print "This is augmentor api class: \n"
+	pass
+        #print "This is augmentor api class: \n"
 
 def execute_augmentor_api():
 

@@ -2,7 +2,8 @@
 import BaseClassApi
 
 class Target(BaseClassApi.Api):
-        print "This is target api class: \n"
+        pass
+	#print "This is target api class: \n"
 
 def execute_target_api():
 

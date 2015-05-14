@@ -12,8 +12,11 @@ redirect_uri = 'http://rubiconproject.mashery.com/io-docs/oauth2callback'
 base_url = 'https://api-staging.dspbuilder.rubiconproject.com'
 
 #username of authorize user
-user_email = "mchowla@rubiconproject.com"
+user_email = "rupali.kumar@gslab.com"
+#"mchowla@rubiconproject.com"
 #password of authorize user
-user_password = "Mike2015!"
+user_password = "gslab2015"
+#"Mike2015!"
 #Name of organization required while executing APIs
-organization = "Mealtime media"
+organization = "New gs lab"
+#"Mealtime media"

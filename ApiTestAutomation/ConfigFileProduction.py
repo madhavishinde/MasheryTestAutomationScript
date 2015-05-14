@@ -16,4 +16,5 @@ user_email = "mchowla@rubiconproject.com"
 #password of authorize user
 user_password = "Mike2015!"
 #Name of organization required while executing APIs
-organization = "Mealtime media"
+organization = "Gs lab"
+#"Mealtime media"

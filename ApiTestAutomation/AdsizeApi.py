@@ -2,7 +2,8 @@
 import BaseClassApi
 
 class Adsize(BaseClassApi.Api):
-        print "This is Adsize api class: \n"
+	pass
+        #print "This is Adsize api class: \n"
 
 def execute_adsize_api():
 

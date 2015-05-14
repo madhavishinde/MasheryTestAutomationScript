@@ -2,7 +2,8 @@
 import BaseClassApi
 
 class Adtype(BaseClassApi.Api):
-        print "This is Adtype api class: \n"
+	pass
+	#print "This is Adtype api class: \n"
 
 def execute_adtype_api():
 

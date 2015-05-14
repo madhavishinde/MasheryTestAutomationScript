@@ -159,7 +159,7 @@ class Api:
         	headers = {'Accept': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
 		files = {'file': open(json_file_name, 'rb')}
         	try:
-                	response = requests.post('https://api.dspbuilder.rubiconproject.com/api/v1/uploadfile', verify=False, headers=headers, files=files)
+                	response = requests.post('%s/api/v1/uploadfile' %(Api.base_url), verify=False, headers=headers, files=files)
 	                status_code = response.status_code
         	        print "\nResponse Status_code : %s" %status_code
 			response_str = response.text

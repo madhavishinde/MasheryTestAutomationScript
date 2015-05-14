@@ -17,7 +17,7 @@ import time
 #import ConfigFileStaging
 import ConfigFile
 #To use login automation function
-import seleniumLoginAutomation
+#import seleniumLoginAutomation
 #Includes BaseClassApi class
 import BaseClassApi
 #Includes OrganizationApi class
@@ -52,26 +52,29 @@ def main(argv):
 	try:
       		opts, args = getopt.getopt(argv,"hi:",["inst_name="])
 	except getopt.GetoptError:
-	      	print 'test.py -i <instance_name>'
+	      	print 'python ApiTestAutomation.py -i <instance_name>'
       		sys.exit(2)
 	for opt, arg in opts:
 	      	if opt == '-h':
-			print 'test.py -i <instance_name>'
+			print 'python ApiTestAutomation.py -i <instance_name>'
          		sys.exit()
       		elif opt in ("-i", "--inst_name"):
 		         instance_name = arg
 	print 'Instance name is ', instance_name
 	
 	if instance_name == "production":
+		print "Inserting production values"
 		shutil.copyfile('ConfigFileProduction.py', 'ConfigFile.py')
 		#shutil.copy2('ConfigFileProduction.py', 'ConfigFile.py')
 	elif instance_name == "staging":
+		print "Inserting staging values"
 		shutil.copyfile('ConfigFileStaging.py', 'ConfigFile.py')
 		#shutil.copy2('ConfigFileStaging.py', 'ConfigFile.py')
 
 	print ConfigFile.base_url
 	#url = ConfigFile.base_url
 	BaseClassApi.Api.base_url = ConfigFile.base_url	
+	print BaseClassApi.Api.base_url
 	api = BaseClassApi.Api()
 	json_file_name = "InputJsonForUpload.txt"
 	
@@ -82,10 +85,10 @@ def main(argv):
 	api.fetch_token_operation()
 	#BaseClassApi.Api.token = "wje2tqpvdynk2unve89nc23s"
 	#This module uploads file i.e. json data and returns upload id.
-	BaseClassApi.Api.upload_id = api.upload_file_operation(json_file_name)
+	#BaseClassApi.Api.upload_id = api.upload_file_operation(json_file_name)
 	#BaseClassApi.Api.upload_id = "5549b2ff70726f7675010000"
 	
-	OrganizationApi.execute_organization_api()
+	#OrganizationApi.execute_organization_api()
 
 	#BidderApi.execute_bidder_api()
 
