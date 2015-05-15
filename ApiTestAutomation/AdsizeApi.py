@@ -27,5 +27,5 @@ def execute_adsize_api():
         #This module gives details of specific organization
         adsize_api.show_operation(BaseClassApi.Api.adsize_id)
         #This module deletes organization
-        ########################aug_api.destroy_operation(BaseClassApi.Api.adsize_id)
+        ########################adsize_api.destroy_operation(BaseClassApi.Api.adsize_id)
 

@@ -27,5 +27,6 @@ def execute_augmentor_api():
         #This module gives details of specific organization
         aug_api.show_operation(BaseClassApi.Api.aug_id)
         #This module deletes organization
-        ########################aug_api.destroy_operation(BaseClassApi.Api.aug_id)
+        ########################
+	#aug_api.destroy_operation(BaseClassApi.Api.aug_id)
 

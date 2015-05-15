@@ -15,7 +15,7 @@ import time
 #to include credentials of oauth2.0
 #import ConfigFileProduction
 #import ConfigFileStaging
-import ConfigFile
+#import ConfigFile
 #To use login automation function
 #import seleniumLoginAutomation
 #Includes BaseClassApi class
@@ -64,16 +64,18 @@ def main(argv):
 	
 	if instance_name == "production":
 		print "Inserting production values"
-		shutil.copyfile('ConfigFileProduction.py', 'ConfigFile.py')
+		BaseClassApi.Api.ConfigFile = __import__('ConfigFileProduction')
+		#shutil.copyfile('ConfigFileProduction.py', 'ConfigFile.py')
 		#shutil.copy2('ConfigFileProduction.py', 'ConfigFile.py')
 	elif instance_name == "staging":
 		print "Inserting staging values"
-		shutil.copyfile('ConfigFileStaging.py', 'ConfigFile.py')
+		BaseClassApi.Api.ConfigFile = __import__('ConfigFileStaging')
+		#shutil.copyfile('ConfigFileStaging.py', 'ConfigFile.py')
 		#shutil.copy2('ConfigFileStaging.py', 'ConfigFile.py')
 
-	print ConfigFile.base_url
+	print BaseClassApi.Api.ConfigFile.base_url
 	#url = ConfigFile.base_url
-	BaseClassApi.Api.base_url = ConfigFile.base_url	
+	BaseClassApi.Api.base_url = BaseClassApi.Api.ConfigFile.base_url	
 	print BaseClassApi.Api.base_url
 	api = BaseClassApi.Api()
 	json_file_name = "InputJsonForUpload.txt"
@@ -85,30 +87,32 @@ def main(argv):
 	api.fetch_token_operation()
 	#BaseClassApi.Api.token = "wje2tqpvdynk2unve89nc23s"
 	#This module uploads file i.e. json data and returns upload id.
-	#BaseClassApi.Api.upload_id = api.upload_file_operation(json_file_name)
+	BaseClassApi.Api.upload_id = api.upload_file_operation(json_file_name)
 	#BaseClassApi.Api.upload_id = "5549b2ff70726f7675010000"
 	
-	#OrganizationApi.execute_organization_api()
+	OrganizationApi.execute_organization_api()
 
-	#BidderApi.execute_bidder_api()
+	BidderApi.execute_bidder_api()
 
-	#AugmentorApi.execute_augmentor_api()
+	AugmentorApi.execute_augmentor_api()
 
-	#TargetApi.execute_target_api()
+	TargetApi.execute_target_api()
 
-	#AudiencesApi.execute_audiences_api()
+	AudiencesApi.execute_audiences_api()
 
-	#AdtypeApi.execute_adtype_api()
+	AdtypeApi.execute_adtype_api()
 
-	#AdsizeApi.execute_adsize_api()
+	AdsizeApi.execute_adsize_api()
 
-	#UserApi.execute_user_api()
+	UserApi.execute_user_api()
 
-	#AdApi.execute_ad_api()
+	AdApi.execute_ad_api()
 
 	#BaseClassApi.Api.ad_id = "5549b32270726f7675020000"
 
-	#CampaignApi.execute_campaign_api()
+	CampaignApi.execute_campaign_api()
+
+	TargetApi.execute_target_api()
 
 	#Finish time of program
 	finish_time = time.time()

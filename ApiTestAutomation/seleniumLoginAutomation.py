@@ -8,8 +8,11 @@ from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 #import ConfigFileProduction
 import ConfigFileStaging
-import ConfigFile
+#import ConfigFile
 import sys
+#Includes BaseClassApi class
+import BaseClassApi
+
 
 redirectURL = ""
 authorization_url= ""
@@ -41,11 +44,12 @@ class SeleniumMasheryTest(unittest.TestCase):
         #driver.get(self.base_url + "/login?response_type=code&client_id=zfupgaj4k7ashk2wx635zptm&redirect_uri=http%3A%2F%2Frubiconproject.mashery.com%2Fio-docs%2Foauth2callback&state=icOrp52N44RdW4JAMhaKQFWQPaiGqB")
         driver.find_element_by_id("user_email").clear()
         #driver.find_element_by_id("user_email").send_keys("mchowla@rubiconproject.com")
-        driver.find_element_by_id("user_email").send_keys(ConfigFile.user_email)
+        print BaseClassApi.Api.ConfigFile.user_email, BaseClassApi.Api.ConfigFile.user_password, BaseClassApi.Api.ConfigFile.organization
+	driver.find_element_by_id("user_email").send_keys(BaseClassApi.Api.ConfigFile.user_email)
 	driver.find_element_by_id("user_password").clear()
-        driver.find_element_by_id("user_password").send_keys(ConfigFile.user_password)
+        driver.find_element_by_id("user_password").send_keys(BaseClassApi.Api.ConfigFile.user_password)
         driver.find_element_by_name("commit").click()
-        Select(driver.find_element_by_id("organization")).select_by_visible_text(ConfigFile.organization)
+        Select(driver.find_element_by_id("organization")).select_by_visible_text(BaseClassApi.Api.ConfigFile.organization)
         driver.find_element_by_name("commit").click()
         #driver.get(link)
         #print("Redirected url : " + driver.current_url)
@@ -90,7 +94,7 @@ def login_automation(auth_url):
     display.start()
     authorization_url = auth_url
 
-    #print "Accessing Authorization URL"
+    print "Accessing Authorization URL"
 
     suite = unittest.TestLoader().loadTestsFromTestCase(SeleniumMasheryTest)
     unittest.TextTestRunner().run(suite)

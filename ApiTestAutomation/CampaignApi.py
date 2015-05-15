@@ -54,7 +54,7 @@ class Campaign(BaseClassApi.Api):
                         elif not BaseClassApi.Api.ad_id:
                                 print "No ad id found.\nPlease first execute Create endpoint function to generate its id.\n"
                         else:
-                                response = requests.post('%s/%s/%s/remove_ad' %(BaseClassApi.Api.base_url, BaseClassApi.Api.url_path, BaseClassApi.Api.campaign_id), verify=False, headers=headers)
+				response = requests.post('%s/%s/%s/remove_ad' %(BaseClassApi.Api.base_url, BaseClassApi.Api.url_path, BaseClassApi.Api.campaign_id), verify=False, headers=headers, data=json.dumps(BaseClassApi.Api.payload))
                                 status_code = response.status_code
                                 print "\nResponse Status_code : %s" %status_code
                                 print response.text
@@ -81,7 +81,7 @@ class Campaign(BaseClassApi.Api):
                                 print "No campaign id found.\nPlease first execute Create endpoint function to generate its id.\n"
                                 #exit(0)
                         else:
-                                response = requests.get('%s/%s/%s/ads' %(BaseClassApi.Api.base_url, BaseClassApi.Api.url_path, BaseClassApi.Api.campaign_id), verify=False, headers=headers, data=json.dumps(BaseClassApi.Api.payload))
+                                response = requests.get('%s/%s/%s/ads' %(BaseClassApi.Api.base_url, BaseClassApi.Api.url_path, BaseClassApi.Api.campaign_id), verify=False, headers=headers)
                                 status_code = response.status_code
                                 print "\nResponse Status_code : %s" %status_code
                                 print response.text
@@ -135,7 +135,7 @@ class Campaign(BaseClassApi.Api):
                                 print "No campaign id found.\nPlease first execute Create endpoint function to generate its id.\n"
                                 #exit(0)
                         else:
-                                response = requests.get('%s/%s/%s/impressions' %(BaseClassApi.Api.base_url, BaseClassApi.Api.url_path, BaseClassApi.Api.campaign_id), verify=False, headers=headers, data=json.dumps(BaseClassApi.Api.payload))
+                                response = requests.get('%s/%s/%s/impressions' %(BaseClassApi.Api.base_url, BaseClassApi.Api.url_path, BaseClassApi.Api.campaign_id), verify=False, headers=headers)
                                 status_code = response.status_code
                                 print "\nResponse Status_code : %s" %status_code
                                 print response.text
@@ -151,6 +151,9 @@ def execute_campaign_api():
 
         BaseClassApi.Api.url_path = "api/v1/campaigns"
         camp_api = Campaign()
+	"""
+	#This is the payload information which is required for new campaign endpoint.
+	BaseClassApi.Api.payload = {"user_id":"%s" %BaseClassApi.Api.user_id,"organization_id":"%s" %BaseClassApi.Api.org_id}
 	#This module gives details of campaigns.
         camp_api.new_operation()
         #This module gives list of organizations available.
@@ -159,15 +162,15 @@ def execute_campaign_api():
         #BaseClassApi.Api.upload_id = aug_api.upload_file_operation(json_file_name)
         #This is the payload information which is required for creating organization.
      ##   #BaseClassApi.Api.payload = {"organization": {"name": "New organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
-        #BaseClassApi.Api.payload = {"augmentor": {"name" : "audience name" , "upload_id":"%s" %BaseClassApi.Api.upload_id}}
+        BaseClassApi.Api.payload = {"campaign" : {"name" : "test_campaing123", "budget" : "12" , "bidder_id" : "%s" %BaseClassApi.Api.bidder_id, "adtype_id" : "%s" %BaseClassApi.Api.adtype_id, "start_date": "2015-02-14" , "end_date": "2015-02-24", "status" : "active"}}
         #This module creates organization.
-        #BaseClassApi.Api.campaign_id = camp_api.create_operation()
-        BaseClassApi.Api.campaign_id = "55471b8670726f10b00f0000"
+        BaseClassApi.Api.campaign_id = camp_api.create_operation()
+        #BaseClassApi.Api.campaign_id = "55471b8670726f10b00f0000"
         #This is the payload information which is required for updating organization.
     ##  BaseClassApi.Api.payload = {"organization": {"name": "Rename organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
-        #BaseClassApi.Api.payload = {"augmentor": {"name" : "audience name" , "upload_id":"%s" %BaseClassApi.Api.upload_id}}
+        BaseClassApi.Api.payload = {"campaign" : {"name" : "test_campaing321", "budget" : "12" , "bidder_id" : "%s" %BaseClassApi.Api.bidder_id, "adtype_id" : "%s" %BaseClassApi.Api.adtype_id, "start_date": "2015-02-14" , "end_date": "2015-02-26", "status" : "active"}}
         #This module updates organization.
-        #camp_api.update_operation(BaseClassApi.Api.campaign_id)
+        camp_api.update_operation(BaseClassApi.Api.campaign_id)
         #This module gives details of specific organization
         camp_api.show_operation(BaseClassApi.Api.campaign_id)
 	#This module pauses endpoint of specific organization
@@ -176,6 +179,9 @@ def execute_campaign_api():
 	#This module resumes endpoint of specific organization
         BaseClassApi.Api.payload = {}
         camp_api.resume_operation(BaseClassApi.Api.campaign_id)
+	"""
+	BaseClassApi.Api.campaign_id = "55558bb769702d44a9060000"
+	BaseClassApi.Api.ad_id = "5552e72d69702d5b72040000"
 	BaseClassApi.Api.payload = {"ad" : "%s" % BaseClassApi.Api.ad_id}
         camp_api.add_ad_operation()
 	BaseClassApi.Api.payload = {"ad" : "%s" % BaseClassApi.Api.ad_id}

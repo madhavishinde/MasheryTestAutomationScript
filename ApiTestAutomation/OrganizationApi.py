@@ -11,7 +11,7 @@ import requests
 #To calculate time required to run program
 import time
 #to include credentials of oauth2.0
-import ConfigFile
+#import ConfigFile
 #To use login automation function
 import seleniumLoginAutomation
 #Includes BaseClassApi class
@@ -94,7 +94,7 @@ def execute_organization_api():
         org_api.show_operation(BaseClassApi.Api.org_id)
         #This module deletes organization
         ########################
-	org_api.destroy_operation(BaseClassApi.Api.org_id)
+	#org_api.destroy_operation(BaseClassApi.Api.org_id)
         #This module gives budget details
         org_api.get_budget_operation()
         #This is the payload information which is required for adding budget.

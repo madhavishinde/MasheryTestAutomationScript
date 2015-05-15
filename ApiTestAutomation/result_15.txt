@@ -1,0 +1,304 @@
+Instance name is  staging
+Inserting staging values
+https://api-staging.dspbuilder.rubiconproject.com
+https://api-staging.dspbuilder.rubiconproject.com
+
+-----------------Authentication-----------------
+
+<type 'module'>
+Fetching access token....
+Accessing Authorization URL
+rupali.kumar@gslab.com gslab2015 New gs lab
+
+ConfigFile.client_id : kqraw62bm8efuh4dt5k2bc26
+ConfigFile.client_secret : Mgd3gCgSqBdm2uerUyX5Zr4y
+
+Access token : 8n2pb2w5k27jtp97dzwf55nb
+
+-----------------Upload File endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b01d69702d6158000000"}
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"554d35a269702d5b34020000","name":"New GS Lab","url":"www.gslab.com","logo":"//s3.amazonaws.com/openplatform-apps/b4e3bfd0-d7fd-0132-7cfd-0ae4cd7a0d98","user_ids":["554d316569702d5848010000","554d3b1569702d62bd020000","554d3b8a69702d62bd040000","5554942969702d341c0b0000","55558d9a69702d44a90a0000"]},{"id":"5554278169702d69d0010000","name":"New organization123","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/6bccdda0-dc21-0132-7ecf-0ae4cd7a0d98","user_ids":["554d3b1569702d62bd020000"]},{"id":"55542cd369702d6d5b010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/9669dad0-dc24-0132-7ed0-0ae4cd7a0d98","user_ids":["554d3b1569702d62bd020000"]},{"id":"55548d6769702d2fcb010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/28058900-dc5e-0132-7ee4-0ae4cd7a0d98","user_ids":["554d3b1569702d62bd020000"]},{"id":"55548e1e69702d2fcb0b0000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/957c9be0-dc5e-0132-7ee6-0ae4cd7a0d98","user_ids":["554d3b1569702d62bd020000"]},{"id":"555493f369702d341c010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/0f6f7b90-dc62-0132-7ee8-0ae4cd7a0d98","user_ids":["554d3b1569702d62bd020000"]},{"id":"5554952669702d33ff010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/c57d76e0-dc62-0132-7eea-0ae4cd7a0d98","user_ids":["554d3b1569702d62bd020000"]}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b02069702d6158010000","name":"New organization123","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","user_ids":["554d3b1569702d62bd020000"]}
+
+-----------------Update endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b02069702d6158010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98"}
+
+-----------------Show endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b02069702d6158010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98"}
+
+-----------------Get Budget endpoint-----------------
+
+
+Response Status_code : 200
+{"available":"$59.00","spent":"$0.00"}
+
+-----------------Add Budget endpoint-----------------
+
+
+Response Status_code : 200
+{"message":"Organization budget added successfully."}
+
+-----------------New endpoint-----------------
+
+
+Response Status_code : 200
+{}
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"5551ba6169702d3333040000","name":"Demo","config":"","winurl":"http://test.com","clickurl":"http://win.com","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]},{"id":"55548d7669702d2fcb030000","name":"update bidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]},{"id":"5555869f69702d0f5c010000","name":"update bidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]},{"id":"55558b7d69702d44a9010000","name":"update bidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]},{"id":"55548e3069702d2fcb0d0000","name":"update bidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]},{"id":"5554940269702d341c030000","name":"update bidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]},{"id":"5554953469702d33ff030000","name":"update bidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b02e69702d6158030000","name":"testbidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]}
+
+-----------------Update endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b02e69702d6158030000","name":"update bidder","config":"{\"type\"=\u003E\"bidder\", \"provider\"=\u003E\"datacratic\", \"version\"=\u003E\"Release1\", \"key\"=\u003E\"\", \"entities\"=\u003E{\"campaign\"=\u003E{\"fields\"=\u003E{\"field1\"=\u003E{\"type\"=\u003E\"string12\", \"value\"=\u003E\"${CAMPAIGN.NAME}\"}, \"field2\"=\u003E{\"type\"=\u003E\"integer\", \"value\"=\u003E\"${CAMPAIGN.INT_ID}\"}}}, \"configurations\"=\u003E{\"reference\"=\u003E\"campaign\", \"fields\"=\u003E{\"active\"=\u003E{\"type\"=\u003E\"boolean\", \"value\"=\u003E1}}}}}","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","optimization_goals":[]}
+
+-----------------Show endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b02e69702d6158030000","name":"update bidder","winurl":"","clickurl":"","conversionurl":"","status":"active","bidurl":"","bidder_type":"","config":"\"{\\\"type\\\"=\\u003E\\\"bidder\\\", \\\"provider\\\"=\\u003E\\\"datacratic\\\", \\\"version\\\"=\\u003E\\\"Release1\\\", \\\"key\\\"=\\u003E\\\"\\\", \\\"entities\\\"=\\u003E{\\\"campaign\\\"=\\u003E{\\\"fields\\\"=\\u003E{\\\"field1\\\"=\\u003E{\\\"type\\\"=\\u003E\\\"string12\\\", \\\"value\\\"=\\u003E\\\"${CAMPAIGN.NAME}\\\"}, \\\"field2\\\"=\\u003E{\\\"type\\\"=\\u003E\\\"integer\\\", \\\"value\\\"=\\u003E\\\"${CAMPAIGN.INT_ID}\\\"}}}, \\\"configurations\\\"=\\u003E{\\\"reference\\\"=\\u003E\\\"campaign\\\", \\\"fields\\\"=\\u003E{\\\"active\\\"=\\u003E{\\\"type\\\"=\\u003E\\\"boolean\\\", \\\"value\\\"=\\u003E1}}}}}\"","optimization_goals":[]}
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"55509fe669702d1ce2050000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"},{"id":"5552ea2469702d6063020000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"},{"id":"55548d7f69702d2fcb040000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"},{"id":"55548e3769702d2fcb0e0000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"},{"id":"5554940969702d341c040000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"},{"id":"5554953e69702d33ff040000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b03669702d6158040000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"}
+
+-----------------Update endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b03669702d6158040000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"}
+
+-----------------Show endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b03669702d6158040000","name":"audience name","status":"active","config":"","schema":"{\"type\":\"bidder\",\"provider\":\"datacratic\",\"version\":\"Release1\",\"key\":\"\",\"entities\":{\"campaign\":{\"fields\":{\"field1\":{\"type\":\"string12\",\"value\":\"${CAMPAIGN.NAME}\"},\"field2\":{\"type\":\"integer\",\"value\":\"${CAMPAIGN.INT_ID}\"}}},\"configurations\":{\"reference\":\"campaign\",\"fields\":{\"active\":{\"type\":\"boolean\",\"value\":1}}}}}"}
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"55548d8769702d2fcb050000","name":"audience rename","status":"active","key":"","note":"","rowcount":"","audience_records":[{"id":"55548d8769702d2fcb060000"},{"id":"55548d8d69702d2fcb070000"}]},{"id":"55548e4069702d2fcb0f0000","name":"audience rename","status":"active","key":"","note":"","rowcount":"","audience_records":[{"id":"55548e4069702d2fcb100000"},{"id":"55548e4569702d2fcb110000"}]},{"id":"5554941169702d341c050000","name":"audience rename","status":"active","key":"","note":"","rowcount":"","audience_records":[{"id":"5554941169702d341c060000"},{"id":"5554941869702d341c070000"}]},{"id":"5554954669702d33ff050000","name":"audience rename","status":"active","key":"","note":"","rowcount":"","audience_records":[{"id":"5554954669702d33ff060000"},{"id":"5554954b69702d33ff070000"}]}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b04069702d6158050000","name":"audience name","status":"active","key":"","note":"","rowcount":""}
+
+-----------------Update endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b04069702d6158050000","name":"audience rename","status":"active","key":"","note":"","rowcount":""}
+
+-----------------Show endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b04069702d6158050000","name":"audience rename","status":"active","key":"","note":"","rowcount":"","url":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98"}
+
+-----------------Add Records Endpoint-----------------
+
+
+Response Status_code : 204
+
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"5361748069702d6c75020000","name":"Mobile Network","regex":"","status":"active"},{"id":"5361748869702d6c75030000","name":"Display Network","regex":"","status":"active"},{"id":"5361749069702d6c75040000","name":"All","regex":"","status":"active"},{"id":"5551b49e69702d32fa020000","name":"Simple","regex":"","status":"active"},{"id":"5552e94869702d5fab020000","name":"Simple","regex":"","status":"active"},{"id":"5553055169702d6f1b020000","name":"Simple","regex":"","status":"active"},{"id":"55542ee369702d6d5b040000","name":"Simple","regex":"","status":"active"},{"id":"55548d9069702d2fcb080000","name":"Simpleupdate","regex":"","status":"active"},{"id":"55548e4969702d2fcb120000","name":"Simpleupdate","regex":"","status":"active"},{"id":"5554941b69702d341c080000","name":"Simpleupdate","regex":"","status":"active"},{"id":"5554954f69702d33ff080000","name":"Simpleupdate","regex":"","status":"active"},{"id":"555586ac69702d0f5c020000","name":"Simpleupdate","regex":"","status":"active"},{"id":"55558b8569702d44a9020000","name":"Simpleupdate","regex":"","status":"active"}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b04969702d6158080000","name":"Simple","regex":"","status":"active"}
+
+-----------------Update endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b04969702d6158080000","name":"Simpleupdate","status":"active","regex":""}
+
+-----------------Show endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b04969702d6158080000","name":"Simpleupdate","regex":"","status":"active"}
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"53616b7469702d6c75010000","width":"320","height":"50","format":"image","status":"active","label":"","max_size":"","size":"320x50"},{"id":"536cf01f69702d6c75080000","width":"300","height":"250","format":"image","status":"active","label":"","max_size":"","size":"300x250"},{"id":"536cf02d69702d6c75090000","width":"336","height":"280","format":"image","status":"active","label":"","max_size":"","size":"336x280"},{"id":"536cf04169702d6c750a0000","width":"728","height":"90","format":"banner","status":"active","label":"","max_size":"","size":"728x90"},{"id":"536cf05169702d6c750b0000","width":"160","height":"600","format":"banner","status":"active","label":"","max_size":"","size":"160x600"},{"id":"536cf06269702d6c750c0000","width":"320","height":"100","format":"banner","status":"active","label":"","max_size":"","size":"320x100"},{"id":"536cf07869702d6c750d0000","width":"250","height":"250","format":"banner","status":"active","label":"","max_size":"","size":"250x250"},{"id":"536cf08669702d6c750e0000","width":"125","height":"125","format":"banner","status":"active","label":"","max_size":"","size":"125x125"},{"id":"5446e3a569702d31b4000000","width":"300","height":"50","format":"image","status":"active","label":"","max_size":"","size":"300x50"},{"id":"5446e3b269702d31b4010000","width":"480","height":"320","format":"image","status":"active","label":"","max_size":"","size":"480x320"},{"id":"5446e91669702d31b4020000","width":"320","height":"480","format":"image","status":"active","label":"","max_size":"","size":"320x480"},{"id":"544f450c69702d3f22000000","width":"640","height":"360","format":"","status":"active","label":"","max_size":"","size":"640x360"},{"id":"545960bb69702d3f22010000","width":"0","height":"0","format":"","status":"active","label":"","max_size":"","size":"0x0"},{"id":"546a273069702d4cda000000","width":"150","height":"150","format":"","status":"active","label":"","max_size":"","size":"150x150"},{"id":"546a274069702d4cda010000","width":"320","height":"280","format":"","status":"active","label":"","max_size":"","size":"320x280"},{"id":"546a274869702d4cda020000","width":"600","height":"257","format":"","status":"active","label":"","max_size":"","size":"600x257"},{"id":"546a275069702d4cda030000","width":"640","height":"100","format":"","status":"active","label":"","max_size":"","size":"640x100"},{"id":"546a276369702d4cda040000","width":"640","height":"360","format":"","status":"active","label":"","max_size":"","size":"640x360"},{"id":"546a276869702d4cda050000","width":"640","height":"560","format":"","status":"active","label":"","max_size":"","size":"640x560"},{"id":"546a277469702d4cda060000","width":"750","height":"100","format":"","status":"active","label":"","max_size":"","size":"750x100"},{"id":"546a277f69702d4cda070000","width":"768","height":"1024","format":"","status":"active","label":"","max_size":"","size":"768x1024"},{"id":"546a279c69702d4cda080000","width":"900","height":"1400","format":"","status":"active","label":"","max_size":"","size":"900x1400"},{"id":"546a27a269702d4cda090000","width":"900","height":"1600","format":"","status":"active","label":"","max_size":"","size":"900x1600"},{"id":"546a27e869702d4cda0b0000","width":"960","height":"64","format":"","status":"active","label":"","max_size":"","size":"960x64"},{"id":"546a27f769702d4cda0c0000","width":"1024","height":"768","format":"","status":"active","label":"","max_size":"","size":"1024x768"},{"id":"546a280369702d4cda0d0000","width":"1120","height":"1500","format":"","status":"active","label":"","max_size":"","size":"1120x1500"},{"id":"546a281169702d4cda0e0000","width":"1200","height":"627","format":"","status":"active","label":"","max_size":"","size":"1200x627"},{"id":"546a281c69702d4cda0f0000","width":"1242","height":"150","format":"","status":"active","label":"","max_size":"","size":"1242x150"},{"id":"546a282569702d4cda100000","width":"1334","height":"64","format":"","status":"active","label":"","max_size":"","size":"1334x64"},{"id":"546a283569702d4cda110000","width":"1500","height":"1120","format":"","status":"active","label":"","max_size":"","size":"1500x1120"},{"id":"546a284269702d4cda120000","width":"1536","height":"132","format":"","status":"active","label":"","max_size":"","size":"1536x132"},{"id":"546a284e69702d4cda130000","width":"1560","height":"750","format":"","status":"active","label":"","max_size":"","size":"1560x750"},{"id":"546a285769702d4cda140000","width":"1600","height":"900","format":"","status":"active","label":"","max_size":"","size":"1600x900"},{"id":"546a286369702d4cda150000","width":"2048","height":"132","format":"","status":"active","label":"","max_size":"","size":"2048x132"},{"id":"546a286e69702d4cda160000","width":"2208","height":"96","format":"","status":"active","label":"","max_size":"","size":"2208x96"},{"id":"55548d9969702d2fcb090000","width":"140","height":"20","format":"png","status":"active","label":"","max_size":"","size":"140x20"},{"id":"55548e4f69702d2fcb130000","width":"140","height":"20","format":"png","status":"active","label":"","max_size":"","size":"140x20"},{"id":"5554942269702d341c090000","width":"140","height":"20","format":"png","status":"active","label":"","max_size":"","size":"140x20"},{"id":"5554955669702d33ff090000","width":"140","height":"20","format":"png","status":"active","label":"","max_size":"","size":"140x20"}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b05069702d6158090000","width":"120","height":"20","format":"png","status":"active","label":"","max_size":"","size":"120x20"}
+
+-----------------Update endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b05069702d6158090000","width":"140","height":"20","format":"png","status":"active","label":"","max_size":"","size":"140x20"}
+
+-----------------Show endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b05069702d6158090000","width":"140","height":"20","format":"png","status":"active","label":"","max_size":"","size":"140x20"}
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"554d316569702d5848010000","email":"mchowla@gmail.com","name":"Mike Chowla","roles":""},{"id":"554d3b1569702d62bd020000","email":"rupali.kumar@gslab.com","name":"Rupali Kumar","roles":""},{"id":"554d3b8a69702d62bd040000","email":"anjali.pingale@gslab.com","name":"Anjali Pingale","roles":""},{"id":"5554942969702d341c0b0000","email":"123test_user+1@gmail.com","name":"retest","roles":""},{"id":"55558d9a69702d44a90a0000","email":"test_test@gmail.com","name":"retest","roles":""}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 422
+{"errors":"Email is already taken"}
+HTTP ERROR.
+422 Client Error: Unprocessable Entity
+
+-----------------Update endpoint-----------------
+
+No id found.
+Please first execute Create endpoint function to generate its id.
+
+
+-----------------Get Roles endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"554d3b1569702d62bd020000","email":"rupali.kumar@gslab.com","name":"Rupali Kumar","current_organization":{"id":"554d35a269702d5b34020000","name":"New GS Lab","url":"www.gslab.com","logo":"//s3.amazonaws.com/openplatform-apps/b4e3bfd0-d7fd-0132-7cfd-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},"organizations":[{"id":"554d35a269702d5b34020000","name":"New GS Lab","url":"www.gslab.com","logo":"//s3.amazonaws.com/openplatform-apps/b4e3bfd0-d7fd-0132-7cfd-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},{"id":"5554278169702d69d0010000","name":"New organization123","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/6bccdda0-dc21-0132-7ecf-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},{"id":"55542cd369702d6d5b010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/9669dad0-dc24-0132-7ed0-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},{"id":"55548d6769702d2fcb010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/28058900-dc5e-0132-7ee4-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},{"id":"55548e1e69702d2fcb0b0000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/957c9be0-dc5e-0132-7ee6-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},{"id":"555493f369702d341c010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/0f6f7b90-dc62-0132-7ee8-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},{"id":"5554952669702d33ff010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/c57d76e0-dc62-0132-7eea-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]},{"id":"5555b02069702d6158010000","name":"Rename organization1","url":"www.test1.com","logo":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","is_admin":true,"is_super":false,"roles":[0]}],"roles":[{"id":"554d3b1569702d62bd010000","name":""},{"id":"5554278169702d69d0020000","name":""},{"id":"55542cd369702d6d5b020000","name":""},{"id":"55542e5169702d6d4b020000","name":""},{"id":"55542f5169702d6d4b080000","name":""},{"id":"5554777169702d233c020000","name":""},{"id":"55548d6769702d2fcb020000","name":""},{"id":"55548e1e69702d2fcb0c0000","name":""},{"id":"555493f469702d341c020000","name":""},{"id":"5554952669702d33ff020000","name":""},{"id":"5555b02169702d6158020000","name":""}]}
+
+-----------------New endpoint-----------------
+
+
+Response Status_code : 200
+{"ad_tag_types":[{"id":"none","name":"NA"},{"id":"wrapper","name":"VAST Wrapper"}],"media_types":["image","video/mp4","video/x-flv"],"adtypes":[{"name":"Mobile Network","id":"5361748069702d6c75020000","regex":"","status":"active"},{"name":"Display Network","id":"5361748869702d6c75030000","regex":"","status":"active"},{"name":"All","id":"5361749069702d6c75040000","regex":"","status":"active"},{"name":"Simple","id":"5551b49e69702d32fa020000","regex":"","status":"active"},{"name":"Simple","id":"5552e94869702d5fab020000","regex":"","status":"active"},{"name":"Simple","id":"5553055169702d6f1b020000","regex":"","status":"active"},{"name":"Simple","id":"55542ee369702d6d5b040000","regex":"","status":"active"},{"name":"Simpleupdate","id":"55548d9069702d2fcb080000","regex":"","status":"active"},{"name":"Simpleupdate","id":"55548e4969702d2fcb120000","regex":"","status":"active"},{"name":"Simpleupdate","id":"5554941b69702d341c080000","regex":"","status":"active"},{"name":"Simpleupdate","id":"5554954f69702d33ff080000","regex":"","status":"active"},{"name":"Simpleupdate","id":"555586ac69702d0f5c020000","regex":"","status":"active"},{"name":"Simpleupdate","id":"55558b8569702d44a9020000","regex":"","status":"active"},{"name":"Simpleupdate","id":"5555b04969702d6158080000","regex":"","status":"active"}],"adsizes":[{"id":"53616b7469702d6c75010000","width":"320","height":"50","status":"active","format":"image"},{"id":"536cf01f69702d6c75080000","width":"300","height":"250","status":"active","format":"image"},{"id":"536cf02d69702d6c75090000","width":"336","height":"280","status":"active","format":"image"},{"id":"536cf04169702d6c750a0000","width":"728","height":"90","status":"active","format":"banner"},{"id":"536cf05169702d6c750b0000","width":"160","height":"600","status":"active","format":"banner"},{"id":"536cf06269702d6c750c0000","width":"320","height":"100","status":"active","format":"banner"},{"id":"536cf07869702d6c750d0000","width":"250","height":"250","status":"active","format":"banner"},{"id":"536cf08669702d6c750e0000","width":"125","height":"125","status":"active","format":"banner"},{"id":"5446e3a569702d31b4000000","width":"300","height":"50","status":"active","format":"image"},{"id":"5446e3b269702d31b4010000","width":"480","height":"320","status":"active","format":"image"},{"id":"5446e91669702d31b4020000","width":"320","height":"480","status":"active","format":"image"},{"id":"544f450c69702d3f22000000","width":"640","height":"360","status":"active","format":""},{"id":"545960bb69702d3f22010000","width":"0","height":"0","status":"active","format":""},{"id":"546a273069702d4cda000000","width":"150","height":"150","status":"active","format":""},{"id":"546a274069702d4cda010000","width":"320","height":"280","status":"active","format":""},{"id":"546a274869702d4cda020000","width":"600","height":"257","status":"active","format":""},{"id":"546a275069702d4cda030000","width":"640","height":"100","status":"active","format":""},{"id":"546a276369702d4cda040000","width":"640","height":"360","status":"active","format":""},{"id":"546a276869702d4cda050000","width":"640","height":"560","status":"active","format":""},{"id":"546a277469702d4cda060000","width":"750","height":"100","status":"active","format":""},{"id":"546a277f69702d4cda070000","width":"768","height":"1024","status":"active","format":""},{"id":"546a279c69702d4cda080000","width":"900","height":"1400","status":"active","format":""},{"id":"546a27a269702d4cda090000","width":"900","height":"1600","status":"active","format":""},{"id":"546a27e869702d4cda0b0000","width":"960","height":"64","status":"active","format":""},{"id":"546a27f769702d4cda0c0000","width":"1024","height":"768","status":"active","format":""},{"id":"546a280369702d4cda0d0000","width":"1120","height":"1500","status":"active","format":""},{"id":"546a281169702d4cda0e0000","width":"1200","height":"627","status":"active","format":""},{"id":"546a281c69702d4cda0f0000","width":"1242","height":"150","status":"active","format":""},{"id":"546a282569702d4cda100000","width":"1334","height":"64","status":"active","format":""},{"id":"546a283569702d4cda110000","width":"1500","height":"1120","status":"active","format":""},{"id":"546a284269702d4cda120000","width":"1536","height":"132","status":"active","format":""},{"id":"546a284e69702d4cda130000","width":"1560","height":"750","status":"active","format":""},{"id":"546a285769702d4cda140000","width":"1600","height":"900","status":"active","format":""},{"id":"546a286369702d4cda150000","width":"2048","height":"132","status":"active","format":""},{"id":"546a286e69702d4cda160000","width":"2208","height":"96","status":"active","format":""},{"id":"55548d9969702d2fcb090000","width":"140","height":"20","status":"active","format":"png"},{"id":"55548e4f69702d2fcb130000","width":"140","height":"20","status":"active","format":"png"},{"id":"5554942269702d341c090000","width":"140","height":"20","status":"active","format":"png"},{"id":"5554955669702d33ff090000","width":"140","height":"20","status":"active","format":"png"},{"id":"5555b05069702d6158090000","width":"140","height":"20","status":"active","format":"png"}]}
+
+-----------------List endpoint-----------------
+
+
+Response status code : 200
+[{"id":"5552e72d69702d5b72040000","label":"TestAD","creative":"//s3.amazonaws.com/openplatform-apps/7de946d0-db62-0132-fce1-0ae4cd7a0d98","alttext":"Alternate","url":"www.test.com","width":728,"height":90,"status":"active","approval_status":"not_approval","tags":"","campaigns":[{"id":"55558da469702d44a90b0000","name":"test_client"}]},{"id":"55548e6069702d2fcb140000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/957c9be0-dc5e-0132-7ee6-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active","approval_status":"approval","tags":"","campaigns":[]},{"id":"5554943369702d341c0c0000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/0f6f7b90-dc62-0132-7ee8-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active","approval_status":"approval","tags":"","campaigns":[]},{"id":"5554956669702d33ff0a0000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/c57d76e0-dc62-0132-7eea-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active","approval_status":"approval","tags":"","campaigns":[{"id":"5554957b69702d33ff0b0000","name":"test_campaing123"},{"id":"5554958b69702d33ff0d0000","name":"test_client"}]},{"id":"55558b9269702d44a9030000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/9a0b7420-dcf5-0132-7eef-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active","approval_status":"approval","tags":"","campaigns":[{"id":"55558ba769702d44a9040000","name":"test_campaing321"},{"id":"55558bb769702d44a9060000","name":"test_client"},{"id":"55558da469702d44a90b0000","name":"test_client"},{"id":"55558f6269702d44a90d0000","name":"test_client"}]},{"id":"5551bae569702d3333070000","label":"ff","creative":"","alttext":"","url":"http://ad.com","width":300,"height":250,"status":"active","approval_status":"not_approval","tags":"","campaigns":[]}]
+
+-----------------Create endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b06769702d61580a0000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":100,"height":120,"status":"active","externaltag":"","tagtype":"inline","approval_status":"not_approval","user_id":"554d3b1569702d62bd020000","organization_id":"554d35a269702d5b34020000","campaigns":[]}
+
+-----------------Update endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b06769702d61580a0000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active","approval_status":"not_approval"}
+
+-----------------Show endpoint-----------------
+
+
+Response Status_code : 200
+{"label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active","approval_status":"not_approval","impressiontag":"http://dspbuilder.rubiconproject.com/track?cid=${CAMPAIGN_ID}\u0026t=imp\u0026oid=554d35a269702d5b34020000\u0026aid=5555b06769702d61580a0000\u0026\u0026rurl=%2F%2Fs3.amazonaws.com%2Fopenplatform-apps%2F715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","clicktag":"http://dspbuilder.rubiconproject.com/track?cid=${CAMPAIGN_ID}\u0026t=click\u0026oid=554d35a269702d5b34020000\u0026aid=5555b06769702d61580a0000\u0026rurl=ww.test.url.com","conversiontag":"http://dspbuilder.rubiconproject.com/track?cid=${CAMPAIGN_ID}\u0026t=conv\u0026oid=554d35a269702d5b34020000\u0026aid=5555b06769702d61580a0000","tagtype":"inline","externaltag":"","id":"5555b06769702d61580a0000","tags":"","campaigns":[]}
+
+-----------------Pause endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b06769702d61580a0000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"new"}
+
+-----------------Resume endpoint-----------------
+
+
+Response Status_code : 200
+{"id":"5555b06769702d61580a0000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active"}
+
+-----------------List Unapproved endpoint-----------------
+
+
+Response Status_code : 200
+[{"id":"5552e72d69702d5b72040000","label":"TestAD","creative":"//s3.amazonaws.com/openplatform-apps/7de946d0-db62-0132-fce1-0ae4cd7a0d98","alttext":"Alternate","url":"www.test.com","width":728,"height":90,"status":"active","campaigns":[{"id":"55558da469702d44a90b0000","name":"test_client"}]},{"id":"5555b06769702d61580a0000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/715615f0-dd0b-0132-7ef2-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active","campaigns":[]},{"id":"5551bae569702d3333070000","label":"ff","creative":"","alttext":"","url":"http://ad.com","width":300,"height":250,"status":"active","campaigns":[]}]
+
+-----------------Approve endpoint-----------------
+
+
+Response Status_code : 204
+
+
+-----------------Add ad endpoint-----------------
+
+
+Response Status_code : 204
+
+
+-----------------Remove ad endpoint-----------------
+
+
+Response Status_code : 204
+
+
+-----------------Get ads endpoint-----------------
+
+
+Response Status_code : 200
+[{"id":"55558b9269702d44a9030000","label":"ad","creative":"//s3.amazonaws.com/openplatform-apps/9a0b7420-dcf5-0132-7eef-0ae4cd7a0d98","alttext":"sd","url":"ww.test.url.com","width":200,"height":120,"status":"active"}]
+
+-----------------Clone endpoint-----------------
+
+
+Response Status_code : 422
+{"errors":"\nProblem:\n  Validation of Campaign failed.\nSummary:\n  The following errors were found: Status  invalid value\nResolution:\n  Try persisting the document with valid data or remove the validations."}
+HTTP ERROR.
+422 Client Error: Unprocessable Entity
+
+-----------------Impressions Download endpoint-----------------
+
+
+Response Status_code : 204
+
+
+--- Completion time : 171.496324062 seconds--

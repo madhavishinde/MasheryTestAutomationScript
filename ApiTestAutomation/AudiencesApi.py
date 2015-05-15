@@ -63,5 +63,5 @@ def execute_audiences_api():
 	BaseClassApi.Api.payload = {"upload_id": "%s" %BaseClassApi.Api.upload_id}
         audiences_api.add_records_operation()
         #This module deletes organization
-        ########################aug_api.destroy_operation(BaseClassApi.Api.audience_id)
+        ########################audiences_api.destroy_operation(BaseClassApi.Api.audience_id)
 

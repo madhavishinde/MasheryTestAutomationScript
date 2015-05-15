@@ -7,8 +7,9 @@ class Target(BaseClassApi.Api):
 
 def execute_target_api():
 
-        BaseClassApi.Api.url_path = "api/v1/targets"
+        BaseClassApi.Api.url_path = "targets"
         target_api = Target()
+	BaseClassApi.Api.campaign_id = "55558bb769702d44a9060000"
         #This module gives list of organizations available.
         target_api.list_operation()
         #This module uploads file i.e. json data and returns upload id.
@@ -21,7 +22,7 @@ def execute_target_api():
         #BaseClassApi.Api.general_id = ""
         #This is the payload information which is required for updating organization.
     ##  BaseClassApi.Api.payload = {"organization": {"name": "Rename organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
-        BaseClassApi.Api.payload = {"target": {"name" : "target name1", "price" : "20",  "segmentrules" : {"app.name": { "include": [ "^Casino" ]}}}}
+        BaseClassApi.Api.payload = {"target": {"name" : "target name2", "price" : "20",  "segmentrules" : {"app.name": { "include": [ "^Casino" ]}}}}
 	# This requires extra modifications
         target_api.update_operation(BaseClassApi.Api.target_id)
         #This module gives details of specific organization
@@ -30,5 +31,6 @@ def execute_target_api():
 
         target_api.show_operation(BaseClassApi.Api.target_id)
         #This module deletes organization
-        ########################aug_api.destroy_operation(BaseClassApi.Api.target_id)
+        ########################
+	target_api.destroy_operation(BaseClassApi.Api.target_id)
 

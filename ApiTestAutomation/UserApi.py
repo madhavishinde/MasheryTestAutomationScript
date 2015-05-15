@@ -1,5 +1,6 @@
 #Includes BaseClassApi class
 import BaseClassApi
+import requests
 
 class User(BaseClassApi.Api):
 
@@ -41,7 +42,7 @@ def execute_user_api():
         #BaseClassApi.Api.upload_id = aug_api.upload_file_operation(json_file_name)
         #This is the payload information which is required for creating organization.
      ##   #BaseClassApi.Api.payload = {"organization": {"name": "New organization1", "url": "www.test1.com", "upload_id": "%s" %BaseClassApi.Api.upload_id }}
-        BaseClassApi.Api.payload = {"user": {"name" : "test", "email" : "test_user+1@gmail.com", "role": 0 }}
+        BaseClassApi.Api.payload = {"user": {"name" : "test_test", "email" : "test_test@gmail.com", "role": 0 }}
         #This module creates organization.
         BaseClassApi.Api.user_id = user_api.create_operation()
         #BaseClassApi.Api.general_id = ""
@@ -52,8 +53,9 @@ def execute_user_api():
         user_api.update_operation(BaseClassApi.Api.user_id)
         #This module gives details of specific organization
 	#This requires extra modifications
-
+	#BaseClassApi.Api.url_path = "api/v1/user"
         #user_api.show_operation(BaseClassApi.Api.user_id)
+	BaseClassApi.Api.url_path = "api/v1/users"
         #This module deletes organization
         ########################user_api.destroy_operation(BaseClassApi.Api.user_id)
 	#This module gets details of roles for user API

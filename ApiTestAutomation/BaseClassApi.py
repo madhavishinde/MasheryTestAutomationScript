@@ -13,7 +13,7 @@ import time
 #to include credentials of oauth2.0
 #import ConfigFileProduction
 #import ConfigFileStaging
-import ConfigFile
+#import ConfigFile
 #To use login automation function
 import seleniumLoginAutomation
 
@@ -21,6 +21,8 @@ import seleniumLoginAutomation
 
 class Api:
 	
+	#(module)ConfigFile
+	ConfigFile = ''	
 	#Id of specific API
 	#general_id = ""	
 	#Id of campaign API
@@ -49,6 +51,12 @@ class Api:
 	upload_id = ""
 	#Data to be send with post request
 	payload = {}
+	#To maintain total count of execution
+	total_count = 0
+	#To maintain count of successful execution
+	pass_count = 0
+	#To maintain count of failed execution
+	fail_count = 0
 	#Base url of APIs
 	#base_url = "https://api.dspbuilder.rubiconproject.com"
 	#base_url = "https://api-staging.dspbuilder.rubiconproject.com"
@@ -70,18 +78,19 @@ class Api:
 		print '\n-----------------Authentication-----------------\n'
 		#To disable verification of HTTPS requests
 		#requests.packages.urllib3.disable_warnings()
-		mashery = OAuth2Session(ConfigFile.client_id, redirect_uri=ConfigFile.redirect_uri)
-		authorization_url, state = mashery.authorization_url(ConfigFile.authorization_base_url)
+		print type(Api.ConfigFile)
+		mashery = OAuth2Session(Api.ConfigFile.client_id, redirect_uri=Api.ConfigFile.redirect_uri)
+		authorization_url, state = mashery.authorization_url(Api.ConfigFile.authorization_base_url)
 		#Conversion between http and https is required because OAuth2.0 supports only
 		#SSL connection (https) and Application uses http connection 
 		authorization_url = authorization_url.replace("https", "http", 1)
 		print "Fetching access token...."
 		#This function does login, selects grant type and returns redirected url containing access code
 		redirect_response = seleniumLoginAutomation.login_automation(authorization_url)
-		print '\nConfigFile.client_id' + ConfigFile.client_id + '\nConfigFile.client_secret : ' + ConfigFile.client_secret  
+		print '\nConfigFile.client_id : ' + Api.ConfigFile.client_id + '\nConfigFile.client_secret : ' + Api.ConfigFile.client_secret  
 		#redirect_response = raw_input('\nRedirect URL : ')
 		redirect_response = redirect_response.replace("http", "https", 1)
-		tokenStr = str(mashery.fetch_token(ConfigFile.token_url, client_secret=ConfigFile.client_secret,authorization_response=redirect_response, verify=False))
+		tokenStr = str(mashery.fetch_token(Api.ConfigFile.token_url, client_secret=Api.ConfigFile.client_secret,authorization_response=redirect_response, verify=False))
 		tokenStr = ast.literal_eval(tokenStr)
 		Api.token = tokenStr.get('access_token')
 		if not Api.token:
@@ -104,9 +113,19 @@ class Api:
 		requests.packages.urllib3.disable_warnings()
 		headers = {'Accept': 'application/json', 'Content-type': 'application/json', 'Authorization': 'Bearer %s' %Api.token}
 		try:
-			response = requests.get('%s/%s' %(Api.base_url, Api.url_path), verify=False, headers=headers)
+			if "targets" in Api.url_path:
+				#Api.url_path = "/api/v1/campaigns"
+				response = requests.get('%s/api/v1/campaigns/%s/targets' %(Api.base_url, Api.campaign_id), verify=False, headers=headers)
+			else:
+				response = requests.get('%s/%s' %(Api.base_url, Api.url_path), verify=False, headers=headers)
 			status_code = response.status_code
 	        	print "\nResponse status code : %s" %status_code
+			if "200" in status_code or "204" in status_code:
+				total_count += 1
+				pass_count += 1
+			else
+				total_count += 1
+				fail_count += 1
 			print response.text
 			response.raise_for_status()
 	        except requests.HTTPError, e:
@@ -132,7 +151,11 @@ class Api:
 	                        print "No id found.\nPlease first execute Create endpoint Api to generate the id.\n"
 				#exit(0)
 			else:
-				response = requests.get('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers)
+				if "targets" in Api.url_path:
+	                                #Api.url_path = "/api/v1/campaigns"
+        	                        response = requests.get('%s/api/v1/campaigns/%s/targets/%s' %(Api.base_url, Api.campaign_id, general_id), verify=False, headers=headers)
+                	        else:
+					response = requests.get('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers)
 				status_code = response.status_code
 				print "\nResponse Status_code : %s" %status_code
 				print response.text
@@ -193,7 +216,11 @@ class Api:
                                 print "No payload data available to pass to post function\n"
                                 #exit(0)
 			else:
-                		response = requests.post('%s/%s' %(Api.base_url, Api.url_path), verify=False, headers=headers, data=json.dumps(Api.payload))
+				if "targets" in Api.url_path:
+                                        #Api.url_path = "/api/v1/campaigns"
+                                        response = requests.post('%s/api/v1/campaigns/%s/targets' %(Api.base_url, Api.campaign_id), verify=False, headers=headers, data=json.dumps(Api.payload))
+                                else:
+                			response = requests.post('%s/%s' %(Api.base_url, Api.url_path), verify=False, headers=headers, data=json.dumps(Api.payload))
 	                	status_code = response.status_code
 	        	        print "\nResponse Status_code : %s" %status_code
         	        	print response.text
@@ -224,7 +251,11 @@ class Api:
                                 print "No id found.\nPlease first execute Create endpoint function to generate its id.\n"
                                 #exit(0)
 			else:
-		                response = requests.put('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers, data=json.dumps(Api.payload))
+				if "targets" in Api.url_path:
+                                        #Api.url_path = "/api/v1/campaigns"
+                                        response = requests.put('%s/api/v1/campaigns/%s/targets/%s' %(Api.base_url, Api.campaign_id, general_id), verify=False, headers=headers, data=json.dumps(Api.payload))
+                                else:
+		                	response = requests.put('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers, data=json.dumps(Api.payload))
         		        status_code = response.status_code
                 		print "\nResponse Status_code : %s" %status_code
 	                	print response.text
@@ -251,7 +282,11 @@ class Api:
                                 print "No id found to destroy.\nPlease first execute Create endpoint function to generate id.\n"
                                 #exit(0)
         		else:
-			        response = requests.delete('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers)
+				if "targets" in Api.url_path:
+                                        #Api.url_path = "/api/v1/campaigns"
+                                        response = requests.delete('%s/api/v1/campaigns/%s/targets/%s' %(Api.base_url, Api.campaign_id, general_id), verify=False, headers=headers)
+                                else:				
+			        	response = requests.delete('%s/%s/%s' %(Api.base_url, Api.url_path, general_id), verify=False, headers=headers)
         	        	status_code = response.status_code
 	        	        print "\nResponse Status_code : %s" %status_code
         	        	#print response.text
