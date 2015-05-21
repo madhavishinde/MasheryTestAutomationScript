@@ -34,8 +34,7 @@ def main(argv):
         except getopt.GetoptError:
                 print 'python main.py -i <instance_name>'
                 sys.exit(2)
-        for opt, arg in opts:
-		
+        for opt, arg in opts:	
                 if opt == '-h':
                         print 'python main.py -i <instance_name>'
                         sys.exit()
@@ -43,7 +42,7 @@ def main(argv):
                          instance_name = arg
 
         if instance_name == "production":
-		variables.ConfigFile = __import__('lib.apis.ConfigFileProduction')
+		variables.ConfigFile = __import__('ConfigFileProduction')
         elif instance_name == "staging":
 		variables.ConfigFile = __import__('ConfigFileStaging')
 
