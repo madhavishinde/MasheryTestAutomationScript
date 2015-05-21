@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 import variables
 import json
@@ -21,7 +20,6 @@ class pause_endpoint:
                 try:
                         if not general_id:
                                 print "No id found.\nPlease first execute Create endpoint function to generate id.\n"
-                                #exit(0)
                         else:
                                 response = requests.post('%s/%s/%s/pause' %(variables.base_url, variables.url_path, general_id), verify=False, headers=headers, data=json.dumps(variables.payload))
                                 status_code = response.status_code

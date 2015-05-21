@@ -1,4 +1,3 @@
-#from lib.apis.variables import *
 from lib.apis import variables
 from lib.apis.create_endpoint import *
 from lib.apis.list_endpoint import *
@@ -10,29 +9,30 @@ class bidder():
 
 	def runner(self):
 
+		#This url_path variable sets endpoint path for bidder API
 		variables.url_path = "api/v1/bidders"
-		#variables.token = "8n2pb2w5k27jtp97dzwf55nb"
 
 		list_end = list_endpoint()
+		#This will execute list endpoint of bidder API
 		list_end.list_operation()	
                 
 		#This is the payload information which is required for creating organization.
                 variables.payload = {"bidder" : {"name" :"testbidder", "upload_id": "%s" %variables.upload_id, "status": "active"  }}
-		#This module creates organization.
 		create_end = create_endpoint()
+		#This will execute create endpoint of bidder API
                 variables.bidder_id = create_end.create_operation()
 
 		#This is the payload information which is required for updating organization.
                 variables.payload = {"bidder" : {"name" :"update bidder", "upload_id": "%s" %variables.upload_id, "status": "active"  }}
-                #This module updates organization.
 		update_end = update_endpoint()
+		#This will execute update endpoint of bidder API
                 update_end.update_operation(variables.bidder_id)
 
-		#This module gives details of specific organization
 		show_end = show_endpoint()
+		#This will execute show endpoint of bidder API
                 show_end.show_operation(variables.bidder_id)
 
-		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                #destroy_end.destroy_operation(variables.bidder_id)
+                #This will execute destroy endpoint of bidder API
+		#destroy_end.destroy_operation(variables.bidder_id)
 

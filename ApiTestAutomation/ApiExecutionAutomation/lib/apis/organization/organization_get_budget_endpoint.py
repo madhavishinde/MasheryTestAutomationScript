@@ -1,6 +1,5 @@
 from .. import variables 
 import requests
-#import variables
 
 class organization_get_budget_endpoint:
 

@@ -39,74 +39,89 @@ def main(argv):
                         sys.exit()
                 elif opt in ("-i", "--inst_name"):
                          instance_name = arg
-        #print 'Instance name is ', instance_name
 
         if instance_name == "production":
-                #print "Inserting production values"
-                #ConfigFile = __import__('ConfigFileProduction')
 		variables.ConfigFile = __import__('lib.apis.ConfigFileProduction')
-                #shutil.copyfile('ConfigFileProduction.py', 'ConfigFile.py')
-                #shutil.copy2('ConfigFileProduction.py', 'ConfigFile.py')
         elif instance_name == "staging":
-                #print "Inserting staging values"
-                #ConfigFile = __import__('ConfigFileStaging')
 		variables.ConfigFile = __import__('ConfigFileStaging')
 
-	#print type(variables.ConfigFile)
-	#print type(ConfigFile)
-	#print ConfigFile.client_id
- 	#print variables.ConfigFile.client_id
-	#print variables.ConfigFile.base_url
-        #url = ConfigFile.base_url
         variables.base_url = variables.ConfigFile.base_url
-        #print variables.base_url
-	#api = BaseClassApi.Api()
         json_file_name = "InputJsonForUpload.txt"
-
-        #json_file_name = "abc.txt"
 
         requests.packages.urllib3.disable_warnings()
         #This module does OAuth authentication and returns access token.
         fetch_token_operation()
+	#This module uploads file and gives upload id
 	upload_file_operation(json_file_name)
 
-	print "\n************************ORGANIZATION API************************** \n"
+	print "\n\n************************ORGANIZATION API************************** \n"
+	#This will create organization class object
 	org_obj = organization()
+	#This will call runner module of organization API class and runner will execute 
+	#endpoints of organization.
 	org_obj.runner()	
 
-	print "\n************************AD API************************** \n"
+	print "\n\n************************AD API************************** \n"
+	#This will create ad class object
 	ad_obj = ad()
+	#This will call runner module of ad API class and runner will execute
+        #endpoints of ad.
         ad_obj.runner()
 
-	print "\n************************ADSIZE API************************** \n"
+	print "\n\n************************ADSIZE API************************** \n"
+	#This will create ad_size class object
 	adsize_obj = ad_size()
+	#This will call runner module of ad_size API class and runner will execute
+        #endpoints of ad_size.
 	adsize_obj.runner()
 
-	print "\n************************AUDIENCES API************************** \n"
+	print "\n\n************************AUDIENCES API************************** \n"
+	#This will create audiences class object
 	audiences_obj = audiences()
+	#This will call runner module of audiences API class and runner will execute
+        #endpoints of audiences.
 	audiences_obj.runner()
 
-	print "\n************************BIDDER API************************** \n"
+	print "\n\n************************BIDDER API************************** \n"
+	#This will create bidder class object
 	bidder_obj = bidder()
+	#This will call runner module of bidder API class and runner will execute
+        #endpoints of bidder.
 	bidder_obj.runner()
 
-	print "\n************************ADTYPE API************************** \n"
+	print "\n\n************************ADTYPE API************************** \n"
+	#This will create ad_type class object
 	ad_type_obj = ad_type()
+	#This will call runner module of ad_type API class and runner will execute
+        #endpoints of ad_type.
 	ad_type_obj.runner()
 
-	print "\n************************AUGMENTOR API************************** \n"
+	print "\n\n************************AUGMENTOR API************************** \n"
+	#This will create augmentor class object
 	augmentor_obj = augmentor()
+	#This will call runner module of augmentor API class and runner will execute
+        #endpoints of augmentor.
 	augmentor_obj.runner()
 
-	print "\n************************USER API************************** \n"
+	print "\n\n************************USER API************************** \n"
+	#This will create user class object
 	user_obj = user()
+	#This will call runner module of user API class and runner will execute
+        #endpoints of user.
         user_obj.runner()
 
-	print "campaign api"
+	print "\n\n************************CAMPAIGN API************************** \n"
+	#This will create campaign class object
 	campaign_obj = campaign()
+	#This will call runner module of campaign API class and runner will execute
+        #endpoints of campaign.
         campaign_obj.runner()
 
+	print "\n\n************************TARGET API************************** \n"
+	#This will create target class object
         target_obj = target()
+	#This will call runner module of target API class and runner will execute
+        #endpoints of target.
         target_obj.runner()
 
 	#Finish time of program

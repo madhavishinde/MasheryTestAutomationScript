@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 import variables
 
@@ -21,10 +20,8 @@ class show_endpoint:
                 try:
                         if not general_id:
                                 print "No id found.\nPlease first execute Create endpoint Api to generate the id.\n"
-                                #exit(0)
                         else:
                                 if "targets" in variables.url_path:
-                                        #Api.url_path = "/api/v1/campaigns"
                                         response = requests.get('%s/api/v1/campaigns/%s/targets/%s' %(variables.base_url, variables.campaign_id, general_id), verify=False, headers=headers)
 				elif "user" in variables.url_path:
 					response = requests.get('%s/%s' %(variables.base_url, variables.url_path), verify=False, headers=headers)

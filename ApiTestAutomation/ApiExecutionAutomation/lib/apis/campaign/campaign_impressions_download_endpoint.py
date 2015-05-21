@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 from .. import variables
 
@@ -21,7 +20,6 @@ class campaign_impressions_download_endpoint:
                 try:
                         if not variables.campaign_id:
                                 print "No campaign id found.\nPlease first execute Create endpoint function to generate its id.\n"
-                                #exit(0)
                         else:
                                 response = requests.get('%s/%s/%s/impressions' %(variables.base_url, variables.url_path, variables.campaign_id), verify=False, headers=headers)
                                 status_code = response.status_code

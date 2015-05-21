@@ -1,11 +1,10 @@
-#from variables import * 
 import requests
 from .. import variables
 import json
 
 class audiences_add_records_endpoint:
 
-	        ###############################################################
+	###############################################################
         #NAME OF MODULE : add_records_operation
         #DESCRIPTION    : This module adds records for Audiences API
         #INPUT          : self object used to give a reference to the
@@ -21,7 +20,6 @@ class audiences_add_records_endpoint:
                 try:
                         if not variables.audience_id:
                                 print "No audience id found.\nPlease first execute Create endpoint function to generate its id.\n"
-                                #exit(0)
                         elif not variables.payload:
                                 print "No payload data found to post.\n"
                         else:

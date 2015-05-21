@@ -1,9 +1,4 @@
-
-var = "666666666 sucess..."
-#(module)ConfigFile
 ConfigFile = ''
-#Id of specific API
-#general_id = ""
 #Id of campaign API
 campaign_id = ""
 #Id of ad API
@@ -37,9 +32,6 @@ pass_count = 1
 #To maintain count of failed execution
 fail_count = 1
 #Base url of APIs
-#Base url of APIs
-#base_url = "https://api.dspbuilder.rubiconproject.com"
-#base_url = "https://api-staging.dspbuilder.rubiconproject.com"
-base_url = '' #ConfigFile.base_url
+base_url = ''
 #Access token
 token = u''

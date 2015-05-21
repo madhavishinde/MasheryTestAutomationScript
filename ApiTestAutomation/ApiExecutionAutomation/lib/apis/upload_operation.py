@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 import variables
 import ast
@@ -10,13 +9,12 @@ import ast
 #INPUT          : self object used to give a reference to the current
 #                 object,json_file_name i.e. name of file containing
 #                 json data for upload api
-#OUTPUT         : upload_id
+#OUTPUT         : NA
 ####################################################################
 
 def upload_file_operation(json_file_name):
 
 	print '\n-----------------Upload File operation-----------------\n'
-        #requests.packages.urllib3.disable_warnings()
         headers = {'Accept': 'application/json', 'Authorization': 'Bearer %s' %variables.token}
         files = {'file': open(json_file_name, 'rb')}
         try:
@@ -29,11 +27,8 @@ def upload_file_operation(json_file_name):
                 	response_str = str(response.text)
                         response_str = ast.literal_eval(response_str)
                         variables.upload_id = response_str.get('id')
-			#return response_str.get('id')
                 response.raise_for_status()
         except requests.HTTPError, e:
                 print 'HTTP ERROR.'
 		print e
-                #finally:
-                        #return response.get('id')
 

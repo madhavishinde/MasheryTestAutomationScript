@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 from .. import variables
 import json
@@ -21,7 +20,6 @@ class campaign_add_ad_endpoint:
                 try:
                         if not variables.campaign_id:
                                 print "No campaign id found.\nPlease first execute Create endpoint function to generate its id.\n"
-                                #exit(0)
                         elif not variables.ad_id:
                                 print "No ad id found.\nPlease first execute Create endpoint function to generate its id.\n"
                         else:

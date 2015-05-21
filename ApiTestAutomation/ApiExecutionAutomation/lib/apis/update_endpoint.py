@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 import variables
 import json
@@ -21,10 +20,8 @@ class update_endpoint:
                 try:
                         if not general_id:
                                 print "No id found.\nPlease first execute Create endpoint function to generate its id.\n"
-                                #exit(0)
                         else:
                                 if "targets" in variables.url_path:
-                                        #Api.url_path = "/api/v1/campaigns"
                                         response = requests.put('%s/api/v1/campaigns/%s/targets/%s' %(variables.base_url, variables.campaign_id, general_id), verify=False, headers=headers, data=json.dumps(variables.payload))
                                 else:
                                         response = requests.put('%s/%s/%s' %(variables.base_url, variables.url_path, general_id), verify=False, headers=headers, data=json.dumps(variables.payload))

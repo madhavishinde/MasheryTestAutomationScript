@@ -1,4 +1,3 @@
-#from lib.apis.variables import *
 from lib.apis import variables
 from lib.apis.create_endpoint import *
 from lib.apis.list_endpoint import *
@@ -10,29 +9,30 @@ class augmentor():
 
 	def runner(self):
 
+		#This url_path variable sets endpoint path for augmentor API
 		variables.url_path = "api/v1/augmentors"
-		#variables.token = "8n2pb2w5k27jtp97dzwf55nb"
 
 		list_end = list_endpoint()
+		#This will execute list endpoint of augmentor API
 		list_end.list_operation()	
                 
 		#This is the payload information which is required for creating organization.
                 variables.payload = {"augmentor": {"name" : "audience name" , "upload_id":"%s" %variables.upload_id}}
-		#This module creates organization.
 		create_end = create_endpoint()
+		#This will execute create endpoint of augmentor API
                 variables.aug_id = create_end.create_operation()
 
 		#This is the payload information which is required for updating organization.
                 variables.payload = {"augmentor": {"name" : "audience name" , "upload_id":"%s" %variables.upload_id}}
-                #This module updates organization.
 		update_end = update_endpoint()
+		#This will execute update endpoint of augmentor API
                 update_end.update_operation(variables.aug_id)
 
-		#This module gives details of specific organization
 		show_end = show_endpoint()
+		#This will execute show endpoint of augmentor API
                 show_end.show_operation(variables.aug_id)
 
-		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                #destroy_end.destroy_operation(variables.aug_id)
+                #This will execute destroy endpoint of augmentor API
+		#destroy_end.destroy_operation(variables.aug_id)
 

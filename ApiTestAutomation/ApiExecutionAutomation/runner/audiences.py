@@ -1,4 +1,3 @@
-#from lib.apis.variables import *
 from lib.apis import variables
 from lib.apis.create_endpoint import *
 from lib.apis.list_endpoint import *
@@ -12,33 +11,33 @@ class audiences():
 	def runner(self):
 
 		variables.url_path = "api/v1/audiences"
-		#variables.token = "8n2pb2w5k27jtp97dzwf55nb"
 
 		list_end = list_endpoint()
+		#This will execute list endpoint of audiences API
 		list_end.list_operation()
                 
 		#This is the payload information which is required for creating organization.
                 variables.payload = {"audience": {"name" : "audience name" , "upload_id":"%s" %variables.upload_id}}
-		#This module creates organization.
 		create_end = create_endpoint()
+		#This will execute create endpoint of audiences API
                 variables.audience_id = create_end.create_operation()
 
 		#This is the payload information which is required for updating organization.
                 variables.payload = {"audience": {"name" : "audience rename" , "upload_id":"%s" %variables.upload_id}}
-                #This module updates organization.
 		update_end = update_endpoint()
+		#This will execute update endpoint of audiences API
                 update_end.update_operation(variables.audience_id)
 
-		#This module gives details of specific organization
 		show_end = show_endpoint()
+		#This will execute show endpoint of audiences API
                 show_end.show_operation(variables.audience_id)
 
-		#This module pauses endpoint of specific ad
 	        variables.payload = {"upload_id": "%s" %variables.upload_id}
 		audiences_add_records_end = audiences_add_records_endpoint()
+		#This will execute add records endpoint of audiences API
         	audiences_add_records_end.add_records_operation()
 
-		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                #destroy_end.destroy_operation(variables.audience_id)
+                #This will execute destroy endpoint of audiences API
+		#destroy_end.destroy_operation(variables.audience_id)
 

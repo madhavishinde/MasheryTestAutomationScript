@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 import json
 import variables
@@ -22,7 +21,6 @@ class resume_endpoint:
                 try:
                         if not general_id:
                                 print "No id found.\nPlease first execute Create endpoint function to generate id.\n"
-                                #exit(0)
                         else:
                                 response = requests.post('%s/%s/%s/resume' %(variables.base_url, variables.url_path, general_id), verify=False, headers=headers, data=json.dumps(variables.payload))
                                 status_code = response.status_code

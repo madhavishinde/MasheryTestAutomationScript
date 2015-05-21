@@ -1,4 +1,3 @@
-#from variables import * 
 import requests
 from .. import variables
 import json
@@ -21,7 +20,6 @@ class campaign_clone_endpoint:
                 try:
                         if not variables.campaign_id:
                                 print "No campaign id found.\nPlease first execute Create endpoint function to generate its id.\n"
-                                #exit(0)
                         else:
                                 response = requests.post('%s/%s/%s/clone' %(variables.base_url, variables.url_path, variables.campaign_id), verify=False, headers=headers, data=json.dumps(variables.payload))
                                 status_code = response.status_code

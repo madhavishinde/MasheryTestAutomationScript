@@ -22,7 +22,6 @@ class organization_add_budget_endpoint:
                 try:
                         if not variables.payload:
                                 print "No payload data available to pass to post function\n"
-                                #exit(0)
                         else:
                                 response = requests.post('%s/%s/budget' %(variables.base_url, variables.url_path), verify=False, headers=headers, data=json.dumps(variables.payload))
                                 status_code = response.status_code
