@@ -18,13 +18,13 @@ class user():
 		list_end.list_operation()	
                 
 		#This is the payload information which is required for creating organization.
-                variables.payload = {"user": {"name" : "test89", "email" : "retest_89@gmail.com", "role": 0 }}
+                variables.payload = {"user": {"name" : "56test89", "email" : "est_879@gmail.com", "role": 0 }}
 		create_end = create_endpoint()
 		#This will execute create endpoint of user API
                 variables.user_id = create_end.create_operation()
 
 		#This is the payload information which is required for updating organization.
-                variables.payload = {"user": {"name" : "ttttt89", "email" : "restte_98@gmail.com", "role": 0 }}
+                variables.payload = {"user": {"name" : "test1289", "email" : "tte_9778@gmail.com", "role": 0 }}
 		update_end = update_endpoint()
 		#This will execute update endpoint of user API
                 update_end.update_operation(variables.user_id)

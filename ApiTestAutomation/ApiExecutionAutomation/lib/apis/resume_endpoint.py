@@ -1,5 +1,8 @@
+#To disable warnings
 import requests
+#For json operation
 import json
+#to access common variables
 import variables
 
 class resume_endpoint:

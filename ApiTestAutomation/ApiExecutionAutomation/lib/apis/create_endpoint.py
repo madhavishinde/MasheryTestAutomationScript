@@ -1,5 +1,8 @@
+#To disable warnings
 import requests
+#To use common variables
 import variables
+#For json operation
 import json
 #For converting string to dictionary
 import ast

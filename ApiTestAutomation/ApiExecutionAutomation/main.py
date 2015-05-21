@@ -1,9 +1,10 @@
-#from ApiExecutionAutomation.runner.organization_execution import *
+#For handling exceptions
 import sys
 #For cmd line arguments
 import getopt
 #To disable warnings
 import requests
+#To disable warnings
 import time
 #from lib.apis.variables import *
 from lib.apis import variables
@@ -34,6 +35,7 @@ def main(argv):
                 print 'python main.py -i <instance_name>'
                 sys.exit(2)
         for opt, arg in opts:
+		
                 if opt == '-h':
                         print 'python main.py -i <instance_name>'
                         sys.exit()

@@ -1,5 +1,8 @@
+#To disable warnings
 import requests
+#to access common variables
 import variables
+#For json operation
 import json
 
 class update_endpoint:

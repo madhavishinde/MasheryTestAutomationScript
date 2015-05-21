@@ -8,7 +8,9 @@ import json
 import sys
 #Usign selenium
 import login_automation
+#To disable warnings
 import requests
+#To access common variable
 import variables
 
 ###############################################################

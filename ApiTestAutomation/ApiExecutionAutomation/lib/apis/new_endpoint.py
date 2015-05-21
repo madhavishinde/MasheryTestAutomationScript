@@ -1,4 +1,6 @@
+#To disable warnings
 import requests
+#To access common variables
 import variables
 
 class new_endpoint:

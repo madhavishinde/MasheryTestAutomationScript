@@ -1,5 +1,8 @@
+#To disable warnings
 import requests
+#To access common variable
 import variables
+#For json operation
 import json
 
 class pause_endpoint:
