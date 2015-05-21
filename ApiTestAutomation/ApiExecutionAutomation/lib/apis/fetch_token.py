@@ -26,7 +26,7 @@ def fetch_token_operation():
         print '\n-----------------Authentication-----------------\n'
 	#To disable verification of HTTPS requests
         #requests.packages.urllib3.disable_warnings()
-        print type(variables.ConfigFile)
+        #print type(variables.ConfigFile)
         mashery = OAuth2Session(variables.ConfigFile.client_id, redirect_uri=variables.ConfigFile.redirect_uri)
         authorization_url, state = mashery.authorization_url(variables.ConfigFile.authorization_base_url)
         #Conversion between http and https is required because OAuth2.0 supports only

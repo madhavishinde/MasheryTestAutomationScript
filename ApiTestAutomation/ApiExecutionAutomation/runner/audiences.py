@@ -40,5 +40,5 @@ class audiences():
 
 		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                destroy_end.destroy_operation(variables.audience_id)
+                #destroy_end.destroy_operation(variables.audience_id)
 

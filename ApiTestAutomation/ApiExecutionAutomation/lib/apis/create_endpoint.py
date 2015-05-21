@@ -24,7 +24,8 @@ class create_endpoint:
                 	                #exit(0)
 	                else:
         	                if "targets" in variables.url_path:
-                	                        #Api.url_path = "/api/v1/campaigns"
+                	      		#print "In target create and payload = ", variables.payload
+				        #Api.url_path = "/api/v1/campaigns"
 	                                response = requests.post('%s/api/v1/campaigns/%s/targets' %(variables.base_url, variables.campaign_id), verify=False, headers=headers, data=json.dumps(variables.payload))
         	                else:
                 	                response = requests.post('%s/%s' %(variables.base_url, variables.url_path), verify=False, headers=headers, data=json.dumps(variables.payload))

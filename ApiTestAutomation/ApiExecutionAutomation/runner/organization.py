@@ -51,13 +51,3 @@ class organization():
                 org_add_budget_end.add_budget_operation()
 
 
-
-def main():
-	print "fi"
-	org_obj = organization()
-	org_obj.runner()
-	#m1.print1()
-
-if __name__ == '__main__':
-        main()
-

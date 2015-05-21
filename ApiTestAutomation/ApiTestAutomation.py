@@ -96,7 +96,7 @@ def main(argv):
 
 	AugmentorApi.execute_augmentor_api()
 
-	TargetApi.execute_target_api()
+	#TargetApi.execute_target_api()
 
 	AudiencesApi.execute_audiences_api()
 

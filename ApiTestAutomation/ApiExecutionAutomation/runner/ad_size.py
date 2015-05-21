@@ -34,5 +34,5 @@ class ad_size():
 
 		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                destroy_end.destroy_operation(variables.adsize_id)
+                #destroy_end.destroy_operation(variables.adsize_id)
 

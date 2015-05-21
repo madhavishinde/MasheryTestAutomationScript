@@ -9,12 +9,13 @@ from lib.apis.new_endpoint import *
 from lib.apis.pause_endpoint import *
 from lib.apis.resume_endpoint import *
 from lib.apis.campaign.campaign_add_ad_endpoint import *
+#campaign_add_ad_endpoint
 from lib.apis.campaign.campaign_get_ads_endpoint import *
 from lib.apis.campaign.campaign_remove_ad_endpoint import *
 from lib.apis.campaign.campaign_clone_endpoint import *
 from lib.apis.campaign.campaign_impressions_download_endpoint import *
 
-class organization():
+class campaign():
 
 	def runner(self):
 
@@ -60,6 +61,8 @@ class organization():
 		variables.payload = {"ad" : "%s" % variables.ad_id}
 	        campaign_add_ad_end = campaign_add_ad_endpoint()
 		campaign_add_ad_end.add_ad_operation()
+		#campaign_add_ad_end = campaign_add_ad_endpoint()
+		#campaign_add_ad_end.add_ad_operation()
         	
 		#This module remove ad from campaign
 	        variables.payload = {"ad" : "%s" % variables.ad_id}
@@ -81,6 +84,6 @@ class organization():
 
 		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                destroy_end.destroy_operation(variables.campaign_id)
+                #destroy_end.destroy_operation(variables.campaign_id)
 
 

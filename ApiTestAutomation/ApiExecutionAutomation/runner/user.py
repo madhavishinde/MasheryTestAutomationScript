@@ -18,13 +18,13 @@ class user():
 		list_end.list_operation()	
                 
 		#This is the payload information which is required for creating organization.
-                variables.payload = {"user": {"name" : "xyz", "email" : "abc_123@gmail.com", "role": 0 }}
+                variables.payload = {"user": {"name" : "test89", "email" : "retest_89@gmail.com", "role": 0 }}
 		#This module creates organization.
 		create_end = create_endpoint()
                 variables.user_id = create_end.create_operation()
 
 		#This is the payload information which is required for updating organization.
-                variables.payload = {"user": {"name" : "xyz1", "email" : "xyz_123@gmail.com", "role": 0 }}
+                variables.payload = {"user": {"name" : "ttttt89", "email" : "restte_98@gmail.com", "role": 0 }}
                 #This module updates organization.
 		update_end = update_endpoint()
                 update_end.update_operation(variables.user_id)
@@ -43,5 +43,5 @@ class user():
 
 		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                destroy_end.destroy_operation(variables.user_id)
+                #destroy_end.destroy_operation(variables.user_id)
 

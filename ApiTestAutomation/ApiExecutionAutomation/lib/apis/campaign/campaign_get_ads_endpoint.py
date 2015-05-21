@@ -2,7 +2,7 @@
 import requests
 from .. import variables
 
-class campaign_add_ad_endpoint:
+class campaign_get_ads_endpoint:
 
         ###############################################################
         #NAME OF MODULE : get_ads_operation

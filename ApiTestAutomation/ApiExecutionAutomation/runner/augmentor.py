@@ -34,5 +34,5 @@ class augmentor():
 
 		#This module deletes organization
                 destroy_end = destroy_endpoint()
-                destroy_end.destroy_operation(variables.aug_id)
+                #destroy_end.destroy_operation(variables.aug_id)
 
