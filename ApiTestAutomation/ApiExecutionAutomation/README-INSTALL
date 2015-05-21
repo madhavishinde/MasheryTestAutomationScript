@@ -1,0 +1,40 @@
+================
+Pre-requisites : 
+================
+
+Following packages needs to be installed:
+1. python2.7+,  
+2. requests_oauthlib library, 
+3. requests library
+4. firefox
+5. pyvirtualdisplay
+6. selenium
+
+To install python
+#apt-get install python
+
+To install requests_oauthlib and requests library
+#pip install requests_oauthlib requests
+
+To install firefox on ubuntu 12
+#sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa && sudo apt-get update
+#sudo apt-get install firefox-trunk
+#firefox &
+
+For display :
+#sudo apt-get install xvfb
+#pip install pyvirtualdisplay
+
+For selenium:
+#pip install selenium
+
+================
+How to execute : 
+================
+
+1. Execute the script with the following command: 
+	#python main.py -i <instance_name>
+2. <instance_name> could be production or staging 
+3. The automation script starts executing all apis and its endpoints.
+
+Note : credentials are store in ConfigFileProduction.py for production instance and in ConfigFileStaging.py for staging instance. You can change it according to your requirement.

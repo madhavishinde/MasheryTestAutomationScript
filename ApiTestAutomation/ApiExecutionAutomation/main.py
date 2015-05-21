@@ -31,12 +31,18 @@ def main(argv):
 
         try:
                 opts, args = getopt.getopt(argv,"hi:",["inst_name="])
+		if len(sys.argv) != 3:
+			print 'python main.py -i <instance_name>'
+			print '\nPlease see README-INSTALL for more details'
+			sys.exit(2)
         except getopt.GetoptError:
                 print 'python main.py -i <instance_name>'
+		print '\nPlease see README-INSTALL for more details'
                 sys.exit(2)
         for opt, arg in opts:	
                 if opt == '-h':
                         print 'python main.py -i <instance_name>'
+			print '\nPlease see README-INSTALL for more details'
                         sys.exit()
                 elif opt in ("-i", "--inst_name"):
                          instance_name = arg
